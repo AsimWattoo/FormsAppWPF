@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="FormsApp.CheckBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FormsApp"
+             xmlns:conv="clr-namespace:FormsApp.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="30"
+             x:Name="checkBox">
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center">
+        
+        <Border Height="30"
+                VerticalAlignment="Center"
+                Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
+                CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
+                Background="{Binding Checked, ElementName=checkBox, Converter={conv:BooleanToColorConverter}, ConverterParameter=5bda73}"
+                BorderBrush="Black"
+                BorderThickness="{Binding Checked, ElementName=checkBox, Converter={conv:BooleanInvertBorderThickness}}"
+                MouseDown="Border_MouseDown"
+                Cursor="Hand">
+            <TextBlock Text="{StaticResource CheckIcon}"
+                        FontFamily="{StaticResource FontAwesome_Solid}"
+                        Foreground="White"
+                        FontSize="18"
+                        Visibility="{Binding Checked, ElementName=checkBox, Converter={conv:BooleanToVisibilityConverter}}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+        </Border>
+
+
+        <TextBlock Text="{Binding Text, ElementName=checkBox}"
+                   VerticalAlignment="Center"
+                   FontWeight="Medium"
+                   FontSize="18"
+                   Margin="10 0 0 0"/>
+    </StackPanel>
+
+</UserControl>

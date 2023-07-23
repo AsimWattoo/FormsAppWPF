@@ -13,9 +13,15 @@
                       VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <local:QuestionControl Height="130"/>
+                <!--<local:QuestionControl Height="130"/>
                 <local:QuestionControl Height="130"/>
-                <local:QuestionControl Height="130"/>
-                <local:QuestionControl Height="130"/>
+                <local:QuestionControl Height="130"/>-->
+                <Button Style="{StaticResource SubmitButton}"
+                        Content="Submit"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="150"
+                        Height="40"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

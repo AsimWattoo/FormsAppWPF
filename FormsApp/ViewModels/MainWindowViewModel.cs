@@ -22,7 +22,7 @@ namespace FormsApp.ViewModels
         /// <summary>
         /// The title of the window
         /// </summary>
-        public string Title { get; set; } = "Form App";
+        public string Title { get; set; } = "Forms";
 
         /// <summary>
         /// The height of the caption

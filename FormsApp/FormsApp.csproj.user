@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\CheckBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\QuestionControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\Navigator.xaml">
       <SubType>Designer</SubType>
     </Page>
