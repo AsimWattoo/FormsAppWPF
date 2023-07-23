@@ -3,7 +3,7 @@ This application consists of 4 pages.
 
 ## Form Page
 
-![Alt text]("Form Page.png")
+![Alt text](Form Page.png)
 
 This page contains collapsible questions along with options and a button to submit the form.
 
