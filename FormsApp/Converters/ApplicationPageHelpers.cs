@@ -18,6 +18,10 @@ namespace FormsApp.Converters
             {
                 case ApplicationPages.Questions:
                     return new QuestionsPage();
+                case ApplicationPages.EditableQuestions:
+                    return new EditableQuestionsPage();
+                case ApplicationPages.Add_Edit_Form:
+                    return new QuestionAddEditForm();
                 default:
                     return new DefaultPage();
             }

@@ -1,0 +1,172 @@
+﻿<local:BasePage x:Class="FormsApp.QuestionAddEditForm"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:FormsApp"
+                mc:Ignorable="d" 
+                d:DesignHeight="450" d:DesignWidth="800"
+                Title="QuestionAddEditForm">
+
+    <Border Padding="20" Background="White">
+        <StackPanel>
+
+            <Button Style="{StaticResource RoundedButtons}"
+                    HorizontalAlignment="Left"
+                    FontSize="15"
+                    Height="30"
+                    Content="{StaticResource ChevronLeft}"
+                    FontFamily="{StaticResource FontAwesome_Solid}"/>
+
+            <TextBox Style="{StaticResource TextInput}"
+                     Tag="Enter the question"
+                     HorizontalContentAlignment="Left"
+                     VerticalAlignment="Top"
+                     FontSize="20"
+                     TextAlignment="Left"
+                     Margin="0 15"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           FontWeight="Medium"
+                           Foreground="#ababab"
+                           Margin="0 0 5 0">
+                        Option 1
+                    </Label>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Grid.Column="1"
+                             Tag="Enter option 1"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+                    
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           FontWeight="Medium"
+                           Foreground="#ababab"
+                           Margin="0 0 5 0">
+                        Option 2
+                    </Label>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Grid.Column="1"
+                             Tag="Enter option 2"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           FontWeight="Medium"
+                           Foreground="#ababab"
+                           Margin="0 0 5 0">
+                        Option 3
+                    </Label>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Grid.Column="1"
+                             Tag="Enter option 3"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           FontWeight="Medium"
+                           Foreground="#ababab"
+                           Margin="0 0 5 0">
+                        Option 4
+                    </Label>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Grid.Column="1"
+                             Tag="Enter option 4"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           FontWeight="Medium"
+                           Foreground="#ababab"
+                           Margin="0 0 5 0">
+                        Option 5
+                    </Label>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Grid.Column="1"
+                             Tag="Enter option 5"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+
+                </Grid>
+
+            </Grid>
+            
+        </StackPanel>
+    </Border>
+</local:BasePage>

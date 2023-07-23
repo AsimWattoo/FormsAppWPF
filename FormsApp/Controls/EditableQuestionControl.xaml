@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="FormsApp.EditableQuestionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FormsApp"
+             xmlns:conv="clr-namespace:FormsApp.Converters"
+             x:Name="editableQuestionControl"
+             Height="130" 
+             Width="700"
+             Margin="0 10"
+             mc:Ignorable="d">
+    
+    <Border CornerRadius="10"
+            BorderThickness="0.5"
+            BorderBrush="Gray"
+            ClipToBounds="True"
+            Background="White"
+            Padding="10 5">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Height="40"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Content="{StaticResource EditIcon}"
+                        Height="35"
+                        FontSize="16"
+                        FontFamily="{StaticResource FontAwesome_Solid}"
+                        Style="{StaticResource RoundedButtons}"
+                        Margin="5 0"/>
+                <Button Content="{StaticResource DeleteIcon}"
+                        FontFamily="{StaticResource FontAwesome_Solid}"
+                        Style="{StaticResource RoundedButtons}"
+                        Height="35"
+                        FontSize="16"
+                        Margin="5 0"/>
+            </StackPanel>
+            
+            <!-- Questions Grid -->
+            <Grid VerticalAlignment="Center"
+                  Grid.Row="1"
+                  Cursor="Hand">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
+                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
+                        Padding="3"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Background="{StaticResource Light_Blue}">
+                        <TextBlock Text="1" FontSize="17"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                </Border>
+
+                <TextBlock Grid.Column="1"
+                           Margin="6 0 0 0"
+                           Text="Do you find yourself struggling more than usual with the current covid-19 situation?"
+                           TextWrapping="Wrap"
+                           FontSize="18"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Top"
+                           FontWeight="DemiBold"/>
+
+            </Grid>
+
+        </Grid>
+        
+    </Border>
+</UserControl>

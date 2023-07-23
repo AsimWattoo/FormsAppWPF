@@ -4,5 +4,7 @@
     {
         None,
         Questions,
+        EditableQuestions,
+        Add_Edit_Form,
     }
 }
