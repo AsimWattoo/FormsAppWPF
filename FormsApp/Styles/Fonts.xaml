@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=netstandard"
+                    xmlns:local="clr-namespace:FormsApp">
+    
+    <FontFamily x:Key="FontAwesome_Brand">pack://application;,,,/Data/Fonts/#Font Awesome 5 Brands Regular</FontFamily>
+    <FontFamily x:Key="FontAwesome_Regular">pack://application;,,,/Data/Fonts/#Font Awesome 5 Free Regular</FontFamily>
+    <FontFamily x:Key="FontAwesome_Solid">pack://application;,,,/Data/Fonts/#Font Awesome 5 Free Solid</FontFamily>
+
+    <system:String x:Key="SpinnerIcon">&#xf110;</system:String>
+    <system:String x:Key="PlusIcon">&#xf067;</system:String>
+    <system:String x:Key="WindowCloseIcon">&#xf410;</system:String>
+    <system:String x:Key="WindowMaximizeIcon">&#xf2d0;</system:String>
+    <system:String x:Key="WindowMinimizeIcon">&#xf2d1;</system:String>
+    <system:String x:Key="WindowRestoreIcon">&#xf2d2;</system:String>
+    <system:String x:Key="LeftArrowIcon">&#xf060;</system:String>
+    <system:String x:Key="AngleUpIcon">&#xf106;</system:String>
+    <system:String x:Key="DeleteIcon">&#xf2ed;</system:String>
+    <system:String x:Key="EditIcon">&#xf044;</system:String>
+    <system:String x:Key="CogIcon">&#xf013;</system:String>
+    <system:String x:Key="UserEditIcon">&#xf4ff;</system:String>
+    <system:String x:Key="SaveIcon">&#xf0c7;</system:String>
+    <system:String x:Key="CheckIcon">&#xf00c;</system:String>
+    <system:String x:Key="BombIcon">&#xf1e2;</system:String>
+    <system:String x:Key="CaretRight">&#xf0da;</system:String>
+    <system:String x:Key="SearchIcon">&#xf002;</system:String>
+    <system:String x:Key="StarIcon">&#xf005;</system:String>
+    <system:String x:Key="UserIcon">&#xf007;</system:String>
+    <system:String x:Key="CartIcon">&#xf07a;</system:String>
+    <system:String x:Key="FavoriteIcon">&#xf004;</system:String>
+    <system:String x:Key="MinusIcon">&#xf068;</system:String>
+    <system:String x:Key="ChevronDown">&#xf078;</system:String>
+    <system:String x:Key="ChevronUp">&#xf077;</system:String>
+    <system:String x:Key="ChevronLeft">&#xf053;</system:String>
+    <system:String x:Key="ChevronRight">&#xf054;</system:String>
+    <system:String x:Key="ListIcon">&#xf022;</system:String>
+    <system:String x:Key="LockIcon">&#xf023;</system:String>
+    <system:String x:Key="CardIcon">&#xf09d;</system:String>
+    <system:String x:Key="FilterIcon">&#xf0b0;</system:String>
+    <system:String x:Key="DashboardIcon">&#xf0db;</system:String>
+    <system:String x:Key="CustomerIcon">&#xf007;</system:String>
+    <system:String x:Key="AccountIcon">&#xf2bd;</system:String>
+    <system:String x:Key="ProductsIcon">&#xf1b3;</system:String>
+    <system:String x:Key="ProductIcon">&#xf1b2;</system:String>
+    <system:String x:Key="ChartIcon">&#xf201;</system:String>
+    <system:String x:Key="DollarIcon">&#xf155;</system:String>
+    <system:String x:Key="WalletIcon">&#xf555;</system:String>
+    <system:String x:Key="LogoutIcon">&#xf023;</system:String>
+    <system:String x:Key="EyeIcon">&#xf06e;</system:String>
+    <system:String x:Key="ReportsIcon">&#xf46d;</system:String>
+    <system:String x:Key="FormIcon">&#xf03a;</system:String>
+    <system:String x:Key="RecommendationsIcon">&#xf080;</system:String>
+
+</ResourceDictionary>

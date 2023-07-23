@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Color x:Key="Background_Dark_Color">#051540</Color>
+    <SolidColorBrush x:Key="Background_Dark" Color="{StaticResource Background_Dark_Color}"/>
+
+    <Color x:Key="Foregound_Bright_Green">#5bda73</Color>
+    <SolidColorBrush x:Key="Bright_Green" Color="{StaticResource Foregound_Bright_Green}"/>
+
+    <Color x:Key="Background_Light_Blue">#0f6fde</Color>
+    <SolidColorBrush x:Key="Light_Blue" Color="{StaticResource Background_Light_Blue}" />
+
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gZEYMsVTeZf2byRTs1iJqvjNYUuh1BTo4d26uTeeFmTcb3PWxNaJuw30i5oINqhJABcfqwUrO1QtI2AwdT2VsQ==",
+  "success": true,
+  "projectFilePath": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\FormsApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asimw\\.nuget\\packages\\fody\\6.6.2\\fody.6.6.2.nupkg.sha512",
+    "C:\\Users\\asimw\\.nuget\\packages\\propertychanged.fody\\3.4.1\\propertychanged.fody.3.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}
