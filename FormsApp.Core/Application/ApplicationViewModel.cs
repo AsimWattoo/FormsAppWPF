@@ -10,7 +10,7 @@ namespace FormsApp.Core.Application
         /// <summary>
         /// The current application page for the application
         /// </summary>
-        public ApplicationPages CurrentPage { get; set; } = ApplicationPages.Add_Edit_Form;
+        public ApplicationPages CurrentPage { get; set; } = ApplicationPages.Questions;
 
         /// <summary>
         /// The view model for the page

@@ -13,6 +13,13 @@
                       VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <local:EditableQuestionControl/>
+                <Button Style="{StaticResource SubmitButton}"
+                        Content="Add Question"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Button_Click"
+                        Width="150"
+                        Height="40"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

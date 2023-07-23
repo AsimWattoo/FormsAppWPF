@@ -11,4 +11,7 @@
     <Color x:Key="Background_Light_Blue">#0f6fde</Color>
     <SolidColorBrush x:Key="Light_Blue" Color="{StaticResource Background_Light_Blue}" />
 
+    <Color x:Key="Background_Light_Red">#FF0000</Color>
+    <SolidColorBrush x:Key="Light_Red" Color="{StaticResource Background_Light_Red}" />
+
 </ResourceDictionary>

@@ -16,7 +16,6 @@ namespace FormsApp
             base.OnStartup(e);
 
             IoC.RegisterStatic<ApplicationViewModel>();
-
         }
 
     }

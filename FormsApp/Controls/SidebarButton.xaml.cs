@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using FormsApp.Core.View_Model.Base;
+
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FormsApp
 {
@@ -50,6 +53,20 @@ namespace FormsApp
         // Using a DependencyProperty as the backing store for Selected.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SelectedProperty =
             DependencyProperty.Register("Selected", typeof(bool), typeof(SidebarButton), new PropertyMetadata(false));
+
+
+        /// <summary>
+        /// The command to be performed when the item is clicked
+        /// </summary>
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Command.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.Register("Command", typeof(ICommand), typeof(SidebarButton), new PropertyMetadata(default(ICommand)));
 
 
 

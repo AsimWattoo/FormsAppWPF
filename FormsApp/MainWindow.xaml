@@ -33,9 +33,9 @@
                                             Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}, Path=ActualHeight}">
                                     <Grid Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}, Path=ActualWidth}"
                                           Height="{Binding CaptionHeight}"/>
-                                    <local:SidebarButton Icon="{StaticResource FormIcon}" Selected="true"/>
-                                    <local:SidebarButton Icon="{StaticResource EditIcon}"/>
-                                    <local:SidebarButton Icon="{StaticResource RecommendationsIcon}"/>
+                                    <local:SidebarButton Command="{Binding FormCommand}"  Icon="{StaticResource FormIcon}" Selected="{Binding FormButtonSelected}"/>
+                                    <local:SidebarButton Command="{Binding QuestionsEditableCommand}" Icon="{StaticResource EditIcon}" Selected="{Binding EditableButtonSelected}"/>
+                                    <local:SidebarButton Command="{Binding RecommendationsCommand}" Icon="{StaticResource RecommendationsIcon}" Selected="{Binding RecommendationButtonSelected}"/>
                                 </StackPanel>
 
                                 <Grid Grid.Column="1">

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\App.xaml
-14-771125286
+15-437146479
 
-331210974635
-196-1042288925
-Controls\CheckBox.xaml;Controls\EditableQuestionControl.xaml;Controls\Navigator.xaml;Controls\QuestionControl.xaml;Controls\SidebarButton.xaml;MainWindow.xaml;Pages\DefaultPage.xaml;Pages\EditableQuestionsPage.xaml;Pages\QuestionAddEditForm.xaml;Pages\QuestionsPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;
+34-874706455
+199-343544409
+Controls\CheckBox.xaml;Controls\EditableQuestionControl.xaml;Controls\Navigator.xaml;Controls\QuestionControl.xaml;Controls\SidebarButton.xaml;MainWindow.xaml;Pages\DefaultPage.xaml;Pages\EditableQuestionsPage.xaml;Pages\QuestionAddEditForm.xaml;Pages\QuestionsPage.xaml;Pages\RecommendationsPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;
 
 False
 

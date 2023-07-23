@@ -15,12 +15,12 @@ namespace FormsApp
         /// <summary>
         /// The animation to use to load page
         /// </summary>
-        public PageAnimation LoadInAnimation { get; set; } = PageAnimation.SlideInFromRight;
+        public PageAnimation LoadInAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
 
         /// <summary>
         /// The animation to use when animating the page out
         /// </summary>
-        public PageAnimation LoadOutAnimation { get; set; } = PageAnimation.SlideOutToLeft;
+        public PageAnimation LoadOutAnimation { get; set; } = PageAnimation.SlideAndFadeOutToRight;
 
         /// <summary>
         /// Tells whether the page should animate out or not

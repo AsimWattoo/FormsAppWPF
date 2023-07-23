@@ -1,4 +1,6 @@
-﻿using FormsApp.Core.View_Model.Base;
+﻿using FormsApp.Core.Application;
+using FormsApp.Core.IoCContainer;
+using FormsApp.Core.View_Model.Base;
 
 using System.Windows;
 using System.Windows.Input;
@@ -49,6 +51,21 @@ namespace FormsApp.ViewModels
         /// </summary>
         public double MinimumHeight { get; set; } = 750;
 
+        /// <summary>
+        /// The indication of form button selection
+        /// </summary>
+        public bool FormButtonSelected { get; set; } = true;
+
+        /// <summary>
+        /// The indication of editable button selected
+        /// </summary>
+        public bool EditableButtonSelected { get; set; } = false;
+
+        /// <summary>
+        /// The indication of recommendation button selected
+        /// </summary>
+        public bool RecommendationButtonSelected { get; set; } = false;
+
         #endregion
 
         #region Commands
@@ -68,6 +85,21 @@ namespace FormsApp.ViewModels
         /// </summary>
         public ICommand CloseCommand { get; set; }
 
+        /// <summary>
+        /// The command to move to form page
+        /// </summary>
+        public ICommand FormCommand { get; set; }
+
+        /// <summary>
+        /// The command to go to editable page
+        /// </summary>
+        public ICommand QuestionsEditableCommand { get; set; }
+
+        /// <summary>
+        /// The command to go to recommendations page
+        /// </summary>
+        public ICommand RecommendationsCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -82,6 +114,40 @@ namespace FormsApp.ViewModels
             MinimizeCommand = new RelayCommand(() => _window.WindowState = WindowState.Minimized);
             MaximizeCommand = new RelayCommand(() => _window.WindowState = _window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized);
             CloseCommand = new RelayCommand(() => _window.Close());
+            FormCommand = new RelayCommand(() => _selectPage(ApplicationPages.Questions));
+            QuestionsEditableCommand = new RelayCommand(() => _selectPage(ApplicationPages.EditableQuestions));
+            RecommendationsCommand = new RelayCommand(() => _selectPage(ApplicationPages.Recommendations));
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Changes the page and state for button
+        /// </summary>
+        /// <param name="page"></param>
+        private void _selectPage(ApplicationPages page)
+        {
+            IoC.Get<ApplicationViewModel>().ChangePage(page);
+            switch (page)
+            {
+                case ApplicationPages.Questions:
+                    FormButtonSelected = true;
+                    RecommendationButtonSelected = false;
+                    EditableButtonSelected = false;
+                    break;
+                case ApplicationPages.EditableQuestions:
+                    FormButtonSelected = false;
+                    RecommendationButtonSelected = false;
+                    EditableButtonSelected = true;
+                    break;
+                case ApplicationPages.Recommendations:
+                    FormButtonSelected = false;
+                    RecommendationButtonSelected = true;
+                    EditableButtonSelected = false;
+                    break;
+            }
         }
 
         #endregion

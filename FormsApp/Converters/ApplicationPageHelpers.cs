@@ -22,6 +22,8 @@ namespace FormsApp.Converters
                     return new EditableQuestionsPage();
                 case ApplicationPages.Add_Edit_Form:
                     return new QuestionAddEditForm();
+                case ApplicationPages.Recommendations:
+                    return new RecommendationsPage();
                 default:
                     return new DefaultPage();
             }
