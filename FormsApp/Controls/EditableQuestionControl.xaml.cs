@@ -75,7 +75,31 @@ namespace FormsApp
         public static readonly DependencyProperty EditCommandParameterProperty =
             DependencyProperty.Register("EditCommandParameter", typeof(object), typeof(EditableQuestionControl), new PropertyMetadata(default(object)));
 
+        /// <summary>
+        /// The command to delete the question
+        /// </summary>
+        public ICommand DeleteCommand
+        {
+            get { return (ICommand)GetValue(DeleteCommandProperty); }
+            set { SetValue(DeleteCommandProperty, value); }
+        }
 
+        // Using a DependencyProperty as the backing store for DeleteCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DeleteCommandProperty =
+            DependencyProperty.Register("DeleteCommand", typeof(ICommand), typeof(EditableQuestionControl), new PropertyMetadata(default(ICommand)));
+
+        /// <summary>
+        /// The parameter for the delete command
+        /// </summary>
+        public object DeleteCommandParameter
+        {
+            get { return (object)GetValue(DeleteCommandParameterProperty); }
+            set { SetValue(DeleteCommandParameterProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DeleteCommandParameter.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DeleteCommandParameterProperty =
+            DependencyProperty.Register("DeleteCommandParameter", typeof(object), typeof(EditableQuestionControl), new PropertyMetadata(default(object)));
 
         #endregion
 
@@ -92,6 +116,17 @@ namespace FormsApp
             EditCommand.Execute(EditCommandParameter);
         }
 
+        /// <summary>
+        /// Fires when the delete button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteCommand.Execute(DeleteCommandParameter);
+        }
+
         #endregion
+
     }
 }

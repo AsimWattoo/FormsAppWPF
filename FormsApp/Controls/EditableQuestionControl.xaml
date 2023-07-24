@@ -40,6 +40,8 @@
                         FontFamily="{StaticResource FontAwesome_Solid}"
                         Style="{StaticResource RoundedButtons}"
                         Height="35"
+                        x:Name="deleteBtn"
+                        Click="deleteBtn_Click"
                         FontSize="16"
                         Margin="5 0"/>
             </StackPanel>

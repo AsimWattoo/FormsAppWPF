@@ -28,6 +28,11 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// </summary>
         public ICommand EditCommand { get; set; }
 
+        /// <summary>
+        /// The command to delete the question
+        /// </summary>
+        public ICommand DeleteCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -61,6 +66,20 @@ namespace FormsApp.Core.View_Model.PageViewModel
                 {
                     Question question = Questions.Where(t => t.Number == num).First();
                     IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Add_Edit_Form, new AddEditQuestionViewModel(question));
+                }
+            });
+            DeleteCommand = new RelayParameterizedCommand(obj =>
+            {
+                int num = -1;
+                if(int.TryParse(obj.ToString(), out num))
+                {
+                    Question question = Questions.Where(t => t.Number == num).First();
+                    Questions.Remove(question);
+                    int index = 1;
+                    foreach(Question q in Questions)
+                    {
+                        q.Number = index++;
+                    }
                 }
             });
         }

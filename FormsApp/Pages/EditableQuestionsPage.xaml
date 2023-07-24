@@ -20,7 +20,9 @@
                             <local:EditableQuestionControl Text="{Binding Text}" 
                                                            Number="{Binding Number}"
                                                            EditCommand="{Binding ElementName=mainGrid, Path=DataContext.EditCommand}"
-                                                           EditCommandParameter="{Binding Number}"/>
+                                                           EditCommandParameter="{Binding Number}"
+                                                           DeleteCommand="{Binding ElementName=mainGrid, Path=DataContext.DeleteCommand}"
+                                                           DeleteCommandParameter="{Binding Number}"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
