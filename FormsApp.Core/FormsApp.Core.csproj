@@ -56,15 +56,22 @@
     <Compile Include="Models\Base\Model.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Recommendation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Base\IRepo.cs" />
     <Compile Include="Repos\QuestionsRepo.cs" />
+    <Compile Include="Repos\RecommendationsRepo.cs" />
     <Compile Include="View Model\Base\BaseViewModel.cs" />
     <Compile Include="View Model\Base\RelayCommand.cs" />
     <Compile Include="View Model\Base\RelayParameterizedCommand.cs" />
+    <Compile Include="View Model\ControlViewModels\OptionSelectViewModel.cs" />
     <Compile Include="View Model\ControlViewModels\OptionViewModel.cs" />
+    <Compile Include="View Model\ControlViewModels\QuestionViewModel.cs" />
+    <Compile Include="View Model\ControlViewModels\RecommendationViewModel.cs" />
     <Compile Include="View Model\PageViewModel\AddEditQuestionViewModel.cs" />
     <Compile Include="View Model\PageViewModel\EditableQuestionsViewModel.cs" />
+    <Compile Include="View Model\PageViewModel\QuestionsPageViewModel.cs" />
+    <Compile Include="View Model\PageViewModel\RecommendationsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

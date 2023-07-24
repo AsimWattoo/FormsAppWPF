@@ -24,7 +24,6 @@ namespace FormsApp
         public QuestionControl()
         {
             InitializeComponent();
-            DataContext = this;
         }
 
         #endregion

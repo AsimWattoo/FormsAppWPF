@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FormsApp
 {
@@ -49,6 +50,34 @@ namespace FormsApp
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(CheckBox), new PropertyMetadata(string.Empty));
 
+        /// <summary>
+        /// The command to execute on click
+        /// </summary>
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Command.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.Register("Command", typeof(ICommand), typeof(CheckBox), new PropertyMetadata(default(ICommand)));
+
+        /// <summary>
+        /// The command parameter to be passed
+        /// </summary>
+        public object CommandParameter
+        {
+            get { return (object)GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CommandParameter.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CommandParameterProperty =
+            DependencyProperty.Register("CommandParameter", typeof(object), typeof(CheckBox), new PropertyMetadata(default(object)));
+
+
+
         #endregion
 
         #region Event Handlers
@@ -60,7 +89,10 @@ namespace FormsApp
         /// <param name="e"></param>
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            Checked = !Checked;
+            if(Command == null)
+                Checked = !Checked;
+            else
+                Command.Execute(CommandParameter);
         }
 
         #endregion

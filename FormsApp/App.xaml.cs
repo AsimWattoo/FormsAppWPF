@@ -19,6 +19,7 @@ namespace FormsApp
             base.OnStartup(e);
             IoC.RegisterStatic<ApplicationViewModel>();
             IoC.RegisterStatic<QuestionsRepo>();
+            IoC.RegisterStatic<RecommendationsRepo>();
             IoC.Get<QuestionsRepo>().Create(new Question()
             {
                 Id = 1,

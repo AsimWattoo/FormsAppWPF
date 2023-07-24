@@ -22,6 +22,7 @@
                 BorderThickness="{Binding Checked, ElementName=checkBox, Converter={conv:BooleanInvertBorderThickness}}"
                 MouseDown="Border_MouseDown"
                 Cursor="Hand">
+            
             <TextBlock Text="{StaticResource CheckIcon}"
                         FontFamily="{StaticResource FontAwesome_Solid}"
                         Foreground="White"
