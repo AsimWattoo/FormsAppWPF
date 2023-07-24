@@ -31,6 +31,8 @@
                 <Button Content="{StaticResource EditIcon}"
                         Height="35"
                         FontSize="16"
+                        x:Name="editBtn"
+                        Click="editBtn_Click"
                         FontFamily="{StaticResource FontAwesome_Solid}"
                         Style="{StaticResource RoundedButtons}"
                         Margin="5 0"/>
@@ -59,7 +61,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Background="{StaticResource Light_Blue}">
-                        <TextBlock Text="1" FontSize="17"
+                        <TextBlock Text="{Binding Number, ElementName=editableQuestionControl}" FontSize="17"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
@@ -67,7 +69,7 @@
 
                 <TextBlock Grid.Column="1"
                            Margin="6 0 0 0"
-                           Text="Do you find yourself struggling more than usual with the current covid-19 situation?"
+                           Text="{Binding Text, ElementName=editableQuestionControl}"
                            TextWrapping="Wrap"
                            FontSize="18"
                            HorizontalAlignment="Stretch"

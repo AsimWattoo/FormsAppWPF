@@ -1,5 +1,6 @@
 ﻿using FormsApp.Core.Application;
 using FormsApp.Core.View_Model.Base;
+using FormsApp.Core.View_Model.PageViewModel;
 using FormsApp.Pages;
 
 namespace FormsApp.Converters
@@ -21,7 +22,7 @@ namespace FormsApp.Converters
                 case ApplicationPages.EditableQuestions:
                     return new EditableQuestionsPage();
                 case ApplicationPages.Add_Edit_Form:
-                    return new QuestionAddEditForm();
+                    return new QuestionAddEditForm(viewModel as AddEditQuestionViewModel ?? new AddEditQuestionViewModel());
                 case ApplicationPages.Recommendations:
                     return new RecommendationsPage();
                 default:

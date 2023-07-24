@@ -1,19 +1,28 @@
 ﻿using FormsApp.Core.Application;
 using FormsApp.Core.IoCContainer;
+using FormsApp.Core.View_Model.PageViewModel;
 
 namespace FormsApp
 {
     /// <summary>
     /// Interaction logic for EditableQuestionsPage.xaml
     /// </summary>
-    public partial class EditableQuestionsPage : BasePage
+    public partial class EditableQuestionsPage : BasePage<EditableQuestionsViewModel>
     {
         #region Constructors
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public EditableQuestionsPage()
+        public EditableQuestionsPage(EditableQuestionsViewModel vm) : base(vm)
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EditableQuestionsPage() : base(new EditableQuestionsViewModel())
         {
             InitializeComponent();
         }
