@@ -1,4 +1,5 @@
 ﻿using FormsApp.Core.Interfaces;
+using FormsApp.Core.Models.Base;
 using FormsApp.Core.View_Model.ControlViewModels;
 
 namespace FormsApp.Core.Models
@@ -6,7 +7,7 @@ namespace FormsApp.Core.Models
     /// <summary>
     /// An option for a question
     /// </summary>
-    public class Option : ITransformable<OptionViewModel>
+    public class Option : Model, ITransformable<OptionViewModel>
     {
         #region Public Properties
 

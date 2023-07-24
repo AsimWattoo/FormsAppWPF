@@ -1,6 +1,7 @@
 ﻿using FormsApp.Core.Application;
 using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
+using FormsApp.Core.Repos;
 using FormsApp.Core.View_Model.Base;
 
 using System.Collections.Generic;
@@ -42,23 +43,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// </summary>
         public EditableQuestionsViewModel()
         {
-            Questions = new ObservableCollection<Question>()
-            {
-                new Question() 
-                { 
-                    Number = 1, 
-                    Text = "How well is your AI model performing on training set?" ,
-                    Options = new List<Option>()
-                    {
-                        new Option() { Text = "Very Satisfied", Weight= 100 },
-                        new Option() { Text = "Satisfied", Weight= 75 },
-                        new Option() { Text = "Neutral", Weight= 50 },
-                        new Option() { Text = "Dissatisfied", Weight= 25 },
-                        new Option() { Text = "Extremely Dissatisfied", Weight= 0 },
-                    }
-                },
-                new Question() { Number = 2, Text = "How satisfied are you with the results of the AI model?"}
-            };
+            Questions = new ObservableCollection<Question>(IoC.Get<QuestionsRepo>().GetAll());
             EditCommand = new RelayParameterizedCommand(obj =>
             {
                 int num = 0;
@@ -74,17 +59,19 @@ namespace FormsApp.Core.View_Model.PageViewModel
                 if(int.TryParse(obj.ToString(), out num))
                 {
                     Question question = Questions.Where(t => t.Number == num).First();
+                    IoC.Get<QuestionsRepo>().Delete(question.Id);
                     Questions.Remove(question);
                     int index = 1;
                     foreach(Question q in Questions)
                     {
                         q.Number = index++;
                     }
+                    List<int> ids = Questions.Select(t => t.Id).ToList();
+                    IoC.Get<QuestionsRepo>().UpdateAll(ids, Questions.ToList());
                 }
             });
         }
 
         #endregion
-
     }
 }

@@ -53,9 +53,12 @@
     <Compile Include="Exceptions\DuplicateKeyException.cs" />
     <Compile Include="Interfaces\ITransformable.cs" />
     <Compile Include="IoCContainer\IoC.cs" />
+    <Compile Include="Models\Base\Model.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\Base\IRepo.cs" />
+    <Compile Include="Repos\QuestionsRepo.cs" />
     <Compile Include="View Model\Base\BaseViewModel.cs" />
     <Compile Include="View Model\Base\RelayCommand.cs" />
     <Compile Include="View Model\Base\RelayParameterizedCommand.cs" />

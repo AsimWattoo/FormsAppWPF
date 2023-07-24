@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using FormsApp.Core.Models.Base;
+
+using System.Collections.Generic;
 
 namespace FormsApp.Core.Models
 {
-    public class Question
+    public class Question : Model
     {
         #region Public Properties
 

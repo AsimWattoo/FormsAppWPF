@@ -2,6 +2,7 @@
 using FormsApp.Core.Enums;
 using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
+using FormsApp.Core.Repos;
 using FormsApp.Core.View_Model.Base;
 using FormsApp.Core.View_Model.ControlViewModels;
 
@@ -13,6 +14,20 @@ namespace FormsApp.Core.View_Model.PageViewModel
 {
     public class AddEditQuestionViewModel : BaseViewModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The id of the question
+        /// </summary>
+        private int _id;
+
+        /// <summary>
+        /// The number of the question
+        /// </summary>
+        private int _number;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
@@ -29,6 +44,11 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// The current mode of operation
         /// </summary>
         public OperationMode Mode { get; set; } = OperationMode.Add;
+
+        /// <summary>
+        /// The error to be shown
+        /// </summary>
+        public string Error { get; set; } = string.Empty;
 
         #endregion
 
@@ -72,6 +92,8 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// <param name="question"></param>
         public AddEditQuestionViewModel(Question question)
         {
+            _id = question.Id;
+            _number = question.Number;
             QuestionText = question.Text;
             Mode = OperationMode.Edit;
             int index = 1;
@@ -117,6 +139,46 @@ namespace FormsApp.Core.View_Model.PageViewModel
             });
             SaveCommand = new RelayCommand(() =>
             {
+                Error = "";
+                if(Options.Count == 0)
+                {
+                    Error = "Please add atleast 1 option";
+                }
+                else if (Options.Where(t => t.Weight > 100).Any() || Options.Where(t => t.Weight < 0).Any())
+                {
+                    Error = "Weight of an option must be between 0 and 100";
+                }
+                else if (string.IsNullOrEmpty(QuestionText))
+                {
+                    Error = "Question must not be empty";
+                }
+
+
+                if (!string.IsNullOrEmpty(Error))
+                    return;
+
+                //Saving the record
+                if(Mode == OperationMode.Add)
+                {
+                    int number = IoC.Get<QuestionsRepo>().GetAll().Count();
+                    IoC.Get<QuestionsRepo>().Create(new Question()
+                    {
+                        Number = number + 1,
+                        Options = Options.Select(t => t.Transform()).ToList(),
+                        Text = QuestionText,
+                    });
+                }
+                else
+                {
+                    IoC.Get<QuestionsRepo>().Update(_id, new Question()
+                    {
+                        Id = _id,
+                        Number = _number,
+                        Options = Options.Select(t => t.Transform()).ToList(),
+                        Text = QuestionText,
+                    });
+                }
+
                 IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.EditableQuestions);
             });
             CancelCommand = new RelayCommand(() =>
