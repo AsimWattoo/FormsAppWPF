@@ -20,7 +20,7 @@ namespace FormsApp
         {
             base.OnStartup(e);
             IoC.RegisterStatic<ApplicationViewModel>();
-            DBContext context = new DBContext("D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\bin\\Debug\\net6.0-windows\\Database.db");
+            DBContext context = new DBContext("Database.db");
             IoC.RegisterStatic(context);
             IoC.RegisterStatic<OptionsRepo>();
             IoC.RegisterStatic<QuestionsRepo>();
