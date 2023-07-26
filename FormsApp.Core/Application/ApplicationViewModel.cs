@@ -27,9 +27,12 @@ namespace FormsApp.Core.Application
         /// <param name="newPage"></param>
         public void ChangePage(ApplicationPages newPage, BaseViewModel viewModel = null)
         {
-            CurrentPage = newPage;
             PageViewModel = viewModel;
-            PropertyValueChanged(nameof(CurrentPage));
+            if(CurrentPage != newPage)
+            {
+                CurrentPage = newPage;
+                PropertyValueChanged(nameof(CurrentPage));
+            }
         }
 
         #endregion

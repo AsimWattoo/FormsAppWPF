@@ -7,5 +7,6 @@
         EditableQuestions,
         Add_Edit_Form,
         Recommendations,
+        Result
     }
 }

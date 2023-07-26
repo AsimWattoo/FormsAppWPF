@@ -10,6 +10,7 @@
              Height="50" Width="50">
     
     <Border Cursor="Hand"
+            Background="Transparent"
             Height="{Binding ActualHeight, ElementName=sidebar_btn}"
             Width="{Binding ActualWidth, ElementName=sidebar_btn}"
             BorderBrush="{StaticResource Bright_Green}"

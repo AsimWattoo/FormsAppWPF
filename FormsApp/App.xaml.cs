@@ -33,7 +33,26 @@ namespace FormsApp
                     new Option() { Id = 5, Text = "Very Dissatisfied", Weight = 0 },
                 },
                 Text = "How much are you satisfied with the AI model results?",
+                Weight = 50,
             });
+            IoC.Get<RecommendationsRepo>()
+                .Create(new Recommendation()
+                {
+                    Id = 1,
+                    MaxValue = 100,
+                    MinValue = 90,
+                    QuestionId = 1,
+                    RecommendationText = "Try to improve the dataset",
+                });
+            IoC.Get<RecommendationsRepo>()
+                .Create(new Recommendation()
+                {
+                    Id = 2,
+                    MaxValue = 60,
+                    MinValue = 40,
+                    QuestionId = 0,
+                    RecommendationText = "Try to increase results by performing data augmentation",
+                });
         }
 
     }

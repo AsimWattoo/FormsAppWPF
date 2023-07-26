@@ -25,6 +25,8 @@ namespace FormsApp.Converters
                     return new QuestionAddEditForm(viewModel as AddEditQuestionViewModel ?? new AddEditQuestionViewModel());
                 case ApplicationPages.Recommendations:
                     return new RecommendationsPage();
+                case ApplicationPages.Result:
+                    return new ResultsPage(viewModel as ResultPageViewModel ?? new ResultPageViewModel());
                 default:
                     return new DefaultPage();
             }

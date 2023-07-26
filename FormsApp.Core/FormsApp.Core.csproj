@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Application\ApplicationViewModel.cs" />
     <Compile Include="Application\Pages.cs" />
+    <Compile Include="Engines\RulesEngine.cs" />
     <Compile Include="Enums\OperationMode.cs" />
     <Compile Include="Exceptions\DuplicateKeyException.cs" />
     <Compile Include="Interfaces\ITransformable.cs" />
@@ -67,11 +68,13 @@
     <Compile Include="View Model\ControlViewModels\OptionSelectViewModel.cs" />
     <Compile Include="View Model\ControlViewModels\OptionViewModel.cs" />
     <Compile Include="View Model\ControlViewModels\QuestionViewModel.cs" />
+    <Compile Include="View Model\ControlViewModels\QuestionWiseRecommendations.cs" />
     <Compile Include="View Model\ControlViewModels\RecommendationViewModel.cs" />
     <Compile Include="View Model\PageViewModel\AddEditQuestionViewModel.cs" />
     <Compile Include="View Model\PageViewModel\EditableQuestionsViewModel.cs" />
     <Compile Include="View Model\PageViewModel\QuestionsPageViewModel.cs" />
     <Compile Include="View Model\PageViewModel\RecommendationsPageViewModel.cs" />
+    <Compile Include="View Model\PageViewModel\ResultPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
