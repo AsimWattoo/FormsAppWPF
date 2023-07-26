@@ -1,4 +1,6 @@
-﻿using FormsApp.Core.Models;
+﻿using FormsApp.Core.DB;
+using FormsApp.Core.IoCContainer;
+using FormsApp.Core.Models;
 using FormsApp.Core.Repos.Base;
 
 using System.Collections.Generic;
@@ -22,7 +24,7 @@ namespace FormsApp.Core.Repos
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public QuestionsRepo()
+        public QuestionsRepo() : base("Questions")
         {
             
         }
@@ -32,12 +34,32 @@ namespace FormsApp.Core.Repos
         #region Public Methods
 
         /// <summary>
+        /// Returns the sql of the table
+        /// </summary>
+        /// <returns></returns>
+        protected override string GetTableSQL()
+        {
+            return @"CREATE TABLE Questions (
+Id INTEGER,
+Number INTEGER,
+Text TEXT,
+Weight REAL,
+PRIMARY KEY ('Id'));";
+        }
+
+        /// <summary>
         /// Stores the question in the list
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public Question Create(Question model)
+        public override Question Create(Question model)
         {
+            //Creating the item in the database
+            using (IoC.Get<DBContext>().CreateConnection())
+            {
+                
+            }
+
             _questions.Add(model);
             return model;
         }
@@ -47,7 +69,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool Delete(int id)
+        public override bool Delete(int id)
         {
             Question question = _questions.Where(t => t.Id == id).FirstOrDefault();
             if (question == null)
@@ -64,7 +86,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Question Get(int id)
+        public override Question Get(int id)
         {
             return _questions.Where(t => t.Id == id).FirstOrDefault();
         }
@@ -73,14 +95,14 @@ namespace FormsApp.Core.Repos
         /// Get all the items from the list
         /// </summary>
         /// <returns></returns>
-        public List<Question> GetAll() => _questions;
+        public override List<Question> GetAll() => _questions;
 
         /// <summary>
         /// Updates the question in the list
         /// </summary>
         /// <param name="id"></param>
         /// <param name="model"></param>
-        public void Update(int id, Question model)
+        public override void Update(int id, Question model)
         {
             int index = _questions.FindIndex(t => t.Id == id);
             _questions[index] = model;
@@ -91,7 +113,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         /// <param name="ids"></param>
         /// <param name="models"></param>
-        public void UpdateAll(List<int> ids, List<Question> models)
+        public override void UpdateAll(List<int> ids, List<Question> models)
         {
             if (ids.Count != models.Count)
                 return;

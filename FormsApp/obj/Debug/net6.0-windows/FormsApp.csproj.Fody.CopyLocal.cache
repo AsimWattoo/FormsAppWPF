@@ -1,5 +1,20 @@
+C:\Users\asimw\.nuget\packages\entityframework\6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.dll
+C:\Users\asimw\.nuget\packages\entityframework\6.4.4\lib\netstandard2.1\EntityFramework.dll
 C:\Users\asimw\.nuget\packages\materialdesigncolors\2.1.4\lib\net6.0\MaterialDesignColors.dll
 C:\Users\asimw\.nuget\packages\materialdesignthemes\4.9.0\lib\net6.0\MaterialDesignThemes.Wpf.dll
 C:\Users\asimw\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39\lib\net5.0-windows7.0\Microsoft.Xaml.Behaviors.dll
+C:\Users\asimw\.nuget\packages\stub.system.data.sqlite.core.netstandard\1.0.118\lib\netstandard2.1\System.Data.SQLite.dll
+C:\Users\asimw\.nuget\packages\system.data.sqlclient\4.8.1\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\asimw\.nuget\packages\system.data.sqlite.ef6\1.0.118\lib\netstandard2.1\System.Data.SQLite.EF6.dll
+C:\Users\asimw\.nuget\packages\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\4.4.0\runtimes\win-arm64\native\sni.dll
+C:\Users\asimw\.nuget\packages\runtime.win-x64.runtime.native.system.data.sqlclient.sni\4.4.0\runtimes\win-x64\native\sni.dll
+C:\Users\asimw\.nuget\packages\runtime.win-x86.runtime.native.system.data.sqlclient.sni\4.4.0\runtimes\win-x86\native\sni.dll
+C:\Users\asimw\.nuget\packages\stub.system.data.sqlite.core.netstandard\1.0.118\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\asimw\.nuget\packages\stub.system.data.sqlite.core.netstandard\1.0.118\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\asimw\.nuget\packages\stub.system.data.sqlite.core.netstandard\1.0.118\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\asimw\.nuget\packages\stub.system.data.sqlite.core.netstandard\1.0.118\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\asimw\.nuget\packages\system.data.sqlclient\4.8.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\asimw\.nuget\packages\system.data.sqlclient\4.8.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp.Core\bin\Debug\FormsApp.Core.dll
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp.Core\bin\Debug\FormsApp.Core.pdb
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp.Core\bin\Debug\FormsApp.Core.dll.config

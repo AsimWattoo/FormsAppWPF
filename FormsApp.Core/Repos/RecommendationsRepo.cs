@@ -18,14 +18,41 @@ namespace FormsApp.Core.Repos
 
         #endregion
 
+        #region Constructor
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public RecommendationsRepo() : base("Recommendations")
+        {
+            
+        }
+
+        #endregion
+
         #region Interface Methods
+
+        /// <summary>
+        /// Returns SQL to create the table
+        /// </summary>
+        /// <returns></returns>
+        protected override string GetTableSQL()
+        {
+            return @"CREATE TABLE Recommendations (
+Id NUMBER,
+RecommendationText TEXT,
+QuestionId NUMBER,
+MinValue REAL,
+MaxValue REAL,
+PRIMARY KEY ('Id'));";
+        }
 
         /// <summary>
         /// Creates the recommendation
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public Recommendation Create(Recommendation model)
+        public override Recommendation Create(Recommendation model)
         {
             _recommendations.Add(model);
             return model;
@@ -36,7 +63,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool Delete(int id)
+        public override bool Delete(int id)
         {
             Recommendation recommendation = _recommendations.Where(t => t.Id == id).FirstOrDefault();
             if (recommendation == null)
@@ -53,7 +80,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Recommendation Get(int id)
+        public override Recommendation Get(int id)
         {
             return _recommendations.Where(t => t.Id == id).FirstOrDefault();
         }
@@ -62,7 +89,7 @@ namespace FormsApp.Core.Repos
         /// Returns list of all the recommendations
         /// </summary>
         /// <returns></returns>
-        public List<Recommendation> GetAll()
+        public override List<Recommendation> GetAll()
         {
             return _recommendations;
         }
@@ -73,7 +100,7 @@ namespace FormsApp.Core.Repos
         /// <param name="id"></param>
         /// <param name="model"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public void Update(int id, Recommendation model)
+        public override void Update(int id, Recommendation model)
         {
             int index = _recommendations.FindIndex(t => t.Id == id);
             if(index != -1)
@@ -87,7 +114,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         /// <param name="ids"></param>
         /// <param name="models"></param>
-        public void UpdateAll(List<int> ids, List<Recommendation> models)
+        public override void UpdateAll(List<int> ids, List<Recommendation> models)
         {
             if (ids.Count != models.Count)
                 return;
