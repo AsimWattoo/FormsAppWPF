@@ -28,14 +28,33 @@
                         Content="{StaticResource ChevronLeft}"
                         FontFamily="{StaticResource FontAwesome_Solid}"/>
 
-                <TextBox Style="{StaticResource TextInput}"
-                         Text="{Binding QuestionText}"
-                         Tag="Enter the question"
-                         HorizontalContentAlignment="Left"
-                         VerticalAlignment="Top"
-                         FontSize="20"
-                         TextAlignment="Left"
-                         Margin="0 15"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Text="{Binding QuestionText}"
+                             Grid.Column="0"
+                             Tag="Enter the question"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+
+                    <TextBox Style="{StaticResource TextInput}"
+                             Text="{Binding Weight}"
+                             Grid.Column="1"
+                             Tag="Enter the weight %"
+                             HorizontalContentAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontSize="20"
+                             TextAlignment="Left"
+                             Margin="0 15"/>
+
+                </Grid>
 
                 <StackPanel>
 

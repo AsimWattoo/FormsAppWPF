@@ -27,6 +27,11 @@ namespace FormsApp.Core.Models
         /// </summary>
         public List<Option> Options { get; set; } = new List<Option>();
 
+        /// <summary>
+        /// The weight of the question in overall answer
+        /// </summary>
+        public double Weight { get; set; } = 0;
+
         #endregion
 
         #region Interface Methods
@@ -44,6 +49,7 @@ namespace FormsApp.Core.Models
                 Options = new ObservableCollection<OptionSelectViewModel>(Options
                     .Select(t => new OptionSelectViewModel(t.Text, t.Id, t.Weight))
                     .ToList()),
+                Weight = Weight,
             };
         }
 

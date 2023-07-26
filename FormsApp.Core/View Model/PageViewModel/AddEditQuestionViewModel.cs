@@ -36,6 +36,11 @@ namespace FormsApp.Core.View_Model.PageViewModel
         public string QuestionText { get; set; } = string.Empty;
 
         /// <summary>
+        /// The weight of the question
+        /// </summary>
+        public double Weight { get; set; } = 0;
+
+        /// <summary>
         /// The options for the question
         /// </summary>
         public ObservableCollection<OptionViewModel> Options { get; set; } = new ObservableCollection<OptionViewModel>();
@@ -95,6 +100,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
             _id = question.Id;
             _number = question.Number;
             QuestionText = question.Text;
+            Weight = question.Weight;
             Mode = OperationMode.Edit;
             int index = 1;
             Options = new ObservableCollection<OptionViewModel>(question.Options.Select(t => t.Transform()));
@@ -153,6 +159,15 @@ namespace FormsApp.Core.View_Model.PageViewModel
                     Error = "Question must not be empty";
                 }
 
+                //Getting all the question
+                double totalWeight = IoC.Get<QuestionsRepo>().GetAll().Sum(t => t.Weight);
+                totalWeight += Weight;
+
+                if(totalWeight > 100 || totalWeight < 0)
+                {
+                    Error = "Total weights of all the questions involved must be between 0 and 100";
+                }
+
 
                 if (!string.IsNullOrEmpty(Error))
                     return;
@@ -166,6 +181,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
                         Number = number + 1,
                         Options = Options.Select(t => t.Transform()).ToList(),
                         Text = QuestionText,
+                        Weight = Weight,
                     });
                 }
                 else
@@ -176,6 +192,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
                         Number = _number,
                         Options = Options.Select(t => t.Transform()).ToList(),
                         Text = QuestionText,
+                        Weight = Weight,
                     });
                 }
 

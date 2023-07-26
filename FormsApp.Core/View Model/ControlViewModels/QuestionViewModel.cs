@@ -36,6 +36,11 @@ namespace FormsApp.Core.View_Model.ControlViewModels
         /// </summary>
         public int SelectedOption { get; set; } = -1;
 
+        /// <summary>
+        /// The weight of the question
+        /// </summary>
+        public double Weight { get; set; } = 0;
+
         #endregion
 
         #region Commands
