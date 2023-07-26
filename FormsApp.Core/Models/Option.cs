@@ -12,6 +12,11 @@ namespace FormsApp.Core.Models
         #region Public Properties
 
         /// <summary>
+        /// The id of the question to which the option belongs to
+        /// </summary>
+        public int QuestionId { get; set; } = 0;
+
+        /// <summary>
         /// The text for an option
         /// </summary>
         public string Text { get; set; } = string.Empty;

@@ -78,6 +78,7 @@
     <Compile Include="Models\Recommendation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Base\IRepo.cs" />
+    <Compile Include="Repos\OptionsRepo.cs" />
     <Compile Include="Repos\QuestionsRepo.cs" />
     <Compile Include="Repos\RecommendationsRepo.cs" />
     <Compile Include="View Model\Base\BaseViewModel.cs" />
