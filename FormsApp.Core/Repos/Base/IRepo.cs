@@ -28,7 +28,7 @@ namespace FormsApp.Core.Repos.Base
         public IRepo(string table)
         {
             _Table = table;
-            _EnsureTableExists();
+            //_EnsureTableExists();
         }
 
         #endregion

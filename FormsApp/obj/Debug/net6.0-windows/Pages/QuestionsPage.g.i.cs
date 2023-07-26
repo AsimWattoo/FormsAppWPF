@@ -55,7 +55,7 @@ namespace FormsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FormsApp;component/pages/questionspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FormsApp;V1.0.0.0;component/pages/questionspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\QuestionsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

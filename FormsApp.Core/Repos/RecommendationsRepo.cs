@@ -30,7 +30,7 @@ namespace FormsApp.Core.Repos
         /// </summary>
         public RecommendationsRepo() : base("Recommendations")
         {
-            _recommendations = _GetAll();
+            //_recommendations = _GetAll();
             if(_recommendations.Count > 0 )
             {
                 _lastId = _recommendations.OrderByDescending(t => t.Id).First().Id;
@@ -102,7 +102,7 @@ PRIMARY KEY ('Id'));";
         {
             model.Id = ++_lastId;
             _recommendations.Add(model);
-            _Insert(model);
+            //_Insert(model);
             return model;
         }
 
@@ -119,7 +119,7 @@ PRIMARY KEY ('Id'));";
             else
             {
                 _recommendations.Remove(recommendation);
-                _Delete(id);
+                //_Delete(id);
                 return true;
             }    
         }
@@ -153,7 +153,7 @@ PRIMARY KEY ('Id'));";
             int index = _recommendations.FindIndex(t => t.Id == id);
             if(index != -1)
             {
-                _Update(id, model);
+                //_Update(id, model);
                 _recommendations[index] = model;
             }
         }

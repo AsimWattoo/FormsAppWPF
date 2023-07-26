@@ -30,8 +30,8 @@ namespace FormsApp.Core.Repos
         /// </summary>
         public QuestionsRepo() : base("Questions")
         {
-            _loadQuestions();
-            if(_questions.Count > 0)
+            //_loadQuestions();
+            if (_questions.Count > 0)
             {
                 _lastId = _questions.OrderByDescending(t => t.Id).First().Id;
             }
@@ -119,13 +119,13 @@ PRIMARY KEY ('Id'));";
         {
             //Creating the question
             model.Id = ++_lastId;
-            _Insert(model);
+            //_Insert(model);
 
             //Creating the options
-            for(int i = 0; i < model.Options.Count; i++)
+            for (int i = 0; i < model.Options.Count; i++)
             {
                 model.Options[i].QuestionId = model.Id;
-                IoC.Get<OptionsRepo>().Create(model.Options[i]);
+                //IoC.Get<OptionsRepo>().Create(model.Options[i]);
             }
 
             _questions.Add(model);
@@ -145,12 +145,12 @@ PRIMARY KEY ('Id'));";
             else
             {
                 _questions.Remove(question);
-                _Delete(id);
+                //_Delete(id);
 
-                foreach(Option option in question.Options)
-                {
-                    IoC.Get<OptionsRepo>().Delete(option.Id);
-                }
+                //foreach(Option option in question.Options)
+                //{
+                //    IoC.Get<OptionsRepo>().Delete(option.Id);
+                //}
 
                 return true;
             }
@@ -182,16 +182,16 @@ PRIMARY KEY ('Id'));";
             int index = _questions.FindIndex(t => t.Id == id);
 
             //Removing all the options
-            List<Option> options = IoC.Get<OptionsRepo>().GetAll().Where(t => t.QuestionId == id).ToList();
-            options.ForEach(t => IoC.Get<OptionsRepo>().Delete(t.Id));
+            //List<Option> options = IoC.Get<OptionsRepo>().GetAll().Where(t => t.QuestionId == id).ToList();
+            //options.ForEach(t => IoC.Get<OptionsRepo>().Delete(t.Id));
 
             //Adding new options
-            foreach(Option option in model.Options)
-            {
-                option.QuestionId = id;
-                IoC.Get<OptionsRepo>().Create(option);
-            }
-            _Update(id, model);
+            //foreach(Option option in model.Options)
+            //{
+            //    option.QuestionId = id;
+            //    IoC.Get<OptionsRepo>().Create(option);
+            //}
+            //_Update(id, model);
             _questions[index] = model;
         }
 
