@@ -23,8 +23,65 @@ namespace FormsApp
             DBContext context = new DBContext("Database.db");
             IoC.RegisterStatic(context);
             IoC.RegisterStatic<OptionsRepo>();
+            IoC.RegisterStatic<CategoriesRepo>();
             IoC.RegisterStatic<QuestionsRepo>();
             IoC.RegisterStatic<RecommendationsRepo>();
+
+            //IoC.Get<CategoriesRepo>().Create(new Category()
+            //{
+            //    Name = "Medicine"
+            //});
+
+            //IoC.Get<CategoriesRepo>().Create(new Category()
+            //{
+            //    Name = "Health"
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //{
+            //    CategoryId = 1,
+            //    Number = 1,
+            //    Options = new List<Option>()
+            //    {
+            //        new Option() { Text = "Not at all", Weight = 1 },
+            //        new Option() { Text = "A little", Weight = 2 },
+            //        new Option() { Text = "Moderate", Weight = 3 },
+            //        new Option() { Text = "Good", Weight = 4 },
+            //        new Option() { Text = "Very Good", Weight = 5 }
+            //    },
+            //    Text = "What is the accuracy of the model",
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //{
+            //    CategoryId = 1,
+            //    Number = 1,
+            //    Options = new List<Option>()
+            //    {
+            //        new Option() { Text = "Not at all", Weight = 1 },
+            //        new Option() { Text = "A little", Weight = 2 },
+            //        new Option() { Text = "Moderate", Weight = 3 },
+            //        new Option() { Text = "Good", Weight = 4 },
+            //        new Option() { Text = "Very Good", Weight = 5 }
+            //    },
+            //    Text = "How much as you satisfied with the model",
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //{
+            //    CategoryId = 1,
+            //    Number = 1,
+            //    Options = new List<Option>()
+            //    {
+            //        new Option() { Text = "Not at all", Weight = 1 },
+            //        new Option() { Text = "A little", Weight = 2 },
+            //        new Option() { Text = "Moderate", Weight = 3 },
+            //        new Option() { Text = "Good", Weight = 4 },
+            //        new Option() { Text = "Very Good", Weight = 5 }
+            //    },
+            //    Text = "What is the prediction result of the model?",
+            //});
+
         }
 
     }

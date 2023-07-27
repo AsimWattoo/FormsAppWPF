@@ -8,20 +8,6 @@ namespace FormsApp.Core.Repos
 {
     public class OptionsRepo : IRepo<Option>
     {
-        #region Private Members
-
-        /// <summary>
-        /// The list of options
-        /// </summary>
-        private List<Option> _options = new List<Option>();
-
-        /// <summary>
-        /// The last id which was assigned
-        /// </summary>
-        private int _lastId = 0;
-
-        #endregion
-
         #region Constructor
 
         /// <summary>
@@ -29,95 +15,11 @@ namespace FormsApp.Core.Repos
         /// </summary>
         public OptionsRepo() : base("Options")
         {
-            _options = _GetAll();
-            if(_options.Count > 0)
-            {
-                _lastId = _options.OrderByDescending(t => t.Id).First().Id;
-            }
         }
 
         #endregion
 
-
         #region Overriden Methods
-
-        /// <summary>
-        /// Creates an option
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        public override Option Create(Option model)
-        {
-            model.Id = ++_lastId;
-            _Insert(model);
-            _options.Add(model);
-            return model;
-        }
-
-        /// <summary>
-        /// Deletes an option
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public override bool Delete(int id)
-        {
-            _Delete(id);
-
-            Option option = _options.Where(t => t.Id == id).FirstOrDefault();
-            if(option != null)
-            {
-                _options.Remove(option);
-               return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Gets an option
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public override Option Get(int id)
-        {
-            return _options.Where(t => t.Id == id).FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Gets all the options
-        /// </summary>
-        /// <returns></returns>
-        public override List<Option> GetAll()
-        {
-            return _options;
-        }
-
-        /// <summary>
-        /// Updates an option
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="model"></param>
-        public override void Update(int id, Option model)
-        {
-            _Update(id, model);
-            int index = _options.FindIndex(t => t.Id == id);
-            if(index >= 0)
-            {
-                _options[index] = model;
-            }
-        }
-
-        /// <summary>
-        /// Updates list of models
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <param name="models"></param>
-        public override void UpdateAll(List<int> ids, List<Option> models)
-        {
-            for(int i =  0; i < ids.Count; i++)
-            {
-                Update(ids[i], models[i]);
-            }
-        }
 
         /// <summary>
         /// Returns the SQL to generate table

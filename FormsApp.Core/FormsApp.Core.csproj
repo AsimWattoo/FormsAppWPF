@@ -73,11 +73,13 @@
     <Compile Include="Interfaces\ITransformable.cs" />
     <Compile Include="IoCContainer\IoC.cs" />
     <Compile Include="Models\Base\Model.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Recommendation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Base\IRepo.cs" />
+    <Compile Include="Repos\CategoriesRepo.cs" />
     <Compile Include="Repos\OptionsRepo.cs" />
     <Compile Include="Repos\QuestionsRepo.cs" />
     <Compile Include="Repos\RecommendationsRepo.cs" />

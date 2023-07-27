@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="FormsApp.CollapsibleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FormsApp"
+             xmlns:at="clr-namespace:FormsApp.AttachedProperties"
+             mc:Ignorable="d" 
+             x:Name="collapsibleCtrl"
+             Height="130"
+             Width="800"
+             at:CollapseHeight.Value="130"
+             at:ExpandedHeight.Value="900"
+             Margin="0 10"
+             >
+    <Border Background="White"
+            CornerRadius="10"
+            BorderBrush="#dedede"
+            BorderThickness="1"
+            Cursor="Hand">
+        
+        <StackPanel>
+
+            <Border Height="130"
+                    BorderBrush="#dedede"
+                    BorderThickness="0 0 0 0.7"
+                    Background="Transparent"
+                    MouseDown="Border_MouseDown">
+
+                <TextBlock Text="Accuracy"
+                           FontSize="30"
+                           Margin="20 0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontWeight="DemiBold"/>
+                
+            </Border>
+
+            <StackPanel>
+                <ContentControl Content="{Binding Items ,ElementName=collapsibleCtrl}"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+    </Border>
+</UserControl>
