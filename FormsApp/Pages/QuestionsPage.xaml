@@ -15,17 +15,24 @@
         <ScrollViewer HorizontalScrollBarVisibility="Hidden"
                       VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <local:CollapsibleControl ItemHeight="370">
-                    <local:CollapsibleControl.Items>
-                        <ItemsControl ItemsSource="{Binding Questions}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <local:QuestionControl DataContext="{Binding}" Height="130"/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </local:CollapsibleControl.Items>
-                </local:CollapsibleControl>
+                <ItemsControl ItemsSource="{Binding Questions}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:CollapsibleControl ItemHeight="370"
+                                                      Heading="{Binding Key}">
+                                <local:CollapsibleControl.Items>
+                                    <ItemsControl ItemsSource="{Binding Value}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <local:QuestionControl DataContext="{Binding}" Height="130"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </local:CollapsibleControl.Items>
+                            </local:CollapsibleControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
                 
                 <TextBlock Text="{Binding Error, FallbackValue=InvalidValue}" 
                            HorizontalAlignment="Center"

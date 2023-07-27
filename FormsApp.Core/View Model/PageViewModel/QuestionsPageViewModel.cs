@@ -1,11 +1,13 @@
 ﻿using FormsApp.Core.Application;
 using FormsApp.Core.IoCContainer;
+using FormsApp.Core.Models;
 using FormsApp.Core.Repos;
 using FormsApp.Core.View_Model.Base;
 using FormsApp.Core.View_Model.ControlViewModels;
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Windows.Input;
 
 namespace FormsApp.Core.View_Model.PageViewModel
@@ -17,7 +19,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// <summary>
         /// The list of questions
         /// </summary>
-        public List<QuestionViewModel> Questions { get; set; } = new List<QuestionViewModel>();
+        public Dictionary<string, List<QuestionViewModel>> Questions { get; set; } = new Dictionary<string, List<QuestionViewModel>>();
 
         /// <summary>
         /// The error to be shown
@@ -42,12 +44,28 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// </summary>
         public QuestionsPageViewModel()
         {
-            Questions = IoC.Get<QuestionsRepo>().GetAll().Select(t => t.Transform()).ToList();
+            List<QuestionViewModel> questions = IoC.Get<QuestionsRepo>().GetAll().Select(t => t.Transform()).ToList();
+
+            List<string> categories = questions.Select(t => t.CategoryName)
+                .Distinct()
+                .ToList();
+
+            foreach(string category in categories)
+            {
+                List<QuestionViewModel> questionsPerCategory = questions.Where(t => t.CategoryName == category).ToList();
+                Questions.Add(category, questionsPerCategory);
+            }
+
             SubmitCommand = new RelayCommand(() =>
             {
                 Error = "";
+                List<QuestionViewModel> allQuestions = new List<QuestionViewModel>();
+                foreach(string key in Questions.Keys)
+                {
+                    allQuestions.AddRange(Questions[key]);
+                }
                 //Ensuring that all questions have been answered
-                foreach(QuestionViewModel vm in Questions)
+                foreach(QuestionViewModel vm in allQuestions)
                 {
                     if(vm.SelectedOption == -1)
                     {
@@ -60,7 +78,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
                     return;
                 
                 //Sending to the next page
-                IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Result, new ResultPageViewModel(Questions));
+                IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Result, new ResultPageViewModel(allQuestions));
 
             });
         }

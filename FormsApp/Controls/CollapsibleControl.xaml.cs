@@ -35,6 +35,20 @@ namespace FormsApp
         #region Dependency Properties
 
         /// <summary>
+        /// The heading of the collapsible control
+        /// </summary>
+        public string Heading
+        {
+            get { return (string)GetValue(HeadingProperty); }
+            set { SetValue(HeadingProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Heading.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty HeadingProperty =
+            DependencyProperty.Register("Heading", typeof(string), typeof(CollapsibleControl), new PropertyMetadata(string.Empty));
+
+
+        /// <summary>
         /// The height of the item
         /// </summary>
         public double ItemHeight

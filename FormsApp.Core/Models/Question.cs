@@ -60,6 +60,8 @@ namespace FormsApp.Core.Models
                     .Select(t => new OptionSelectViewModel(t.Text, t.Id, t.Weight))
                     .ToList()),
                 Weight = Weight,
+                CategoryId = CategoryId,
+                CategoryName = CategoryName
             };
         }
 

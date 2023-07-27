@@ -27,7 +27,7 @@
                     Background="Transparent"
                     MouseDown="Border_MouseDown">
 
-                <TextBlock Text="Accuracy"
+                <TextBlock Text="{Binding Heading, ElementName=collapsibleCtrl}"
                            FontSize="30"
                            Margin="20 0"
                            HorizontalAlignment="Left"

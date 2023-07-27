@@ -29,12 +29,12 @@ namespace FormsApp
 
             //IoC.Get<CategoriesRepo>().Create(new Category()
             //{
-            //    Name = "Medicine"
+            //    Name = "Accuracy"
             //});
 
             //IoC.Get<CategoriesRepo>().Create(new Category()
             //{
-            //    Name = "Health"
+            //    Name = "Bias"
             //});
 
             //IoC.Get<QuestionsRepo>().Create(new Question()
@@ -69,7 +69,7 @@ namespace FormsApp
 
             //IoC.Get<QuestionsRepo>().Create(new Question()
             //{
-            //    CategoryId = 1,
+            //    CategoryId = 2,
             //    Number = 3,
             //    Options = new List<Option>()
             //    {

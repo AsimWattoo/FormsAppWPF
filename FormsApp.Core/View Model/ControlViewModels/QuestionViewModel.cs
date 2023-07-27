@@ -22,6 +22,16 @@ namespace FormsApp.Core.View_Model.ControlViewModels
         public int Number { get; set; } = 0;
 
         /// <summary>
+        /// The category id
+        /// </summary>
+        public int CategoryId { get; set; } = 0;
+
+        /// <summary>
+        /// The name of the category
+        /// </summary>
+        public string CategoryName { get; set; } = string.Empty;
+
+        /// <summary>
         /// The text of the question
         /// </summary>
         public string Text { get; set; } = string.Empty;
