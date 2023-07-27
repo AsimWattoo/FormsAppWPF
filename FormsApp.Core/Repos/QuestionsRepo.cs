@@ -142,8 +142,7 @@ PRIMARY KEY ('Id'));";
             List<Option> options = IoC.Get<OptionsRepo>().GetAll().Where(t => t.QuestionId == id).ToList();
             options.ForEach(t => IoC.Get<OptionsRepo>().Delete(t.Id));
 
-            //Adding new options
-            foreach(Option option in model.Options)
+            foreach (Option option in model.Options)
             {
                 option.QuestionId = id;
                 IoC.Get<OptionsRepo>().Create(option);

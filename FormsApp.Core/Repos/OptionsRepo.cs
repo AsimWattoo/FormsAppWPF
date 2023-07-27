@@ -1,9 +1,6 @@
 ﻿using FormsApp.Core.Models;
 using FormsApp.Core.Repos.Base;
 
-using System.Collections.Generic;
-using System.Linq;
-
 namespace FormsApp.Core.Repos
 {
     public class OptionsRepo : IRepo<Option>

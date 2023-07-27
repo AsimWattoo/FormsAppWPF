@@ -55,7 +55,7 @@ namespace FormsApp
             //IoC.Get<QuestionsRepo>().Create(new Question()
             //{
             //    CategoryId = 1,
-            //    Number = 1,
+            //    Number = 2,
             //    Options = new List<Option>()
             //    {
             //        new Option() { Text = "Not at all", Weight = 1 },
@@ -70,7 +70,7 @@ namespace FormsApp
             //IoC.Get<QuestionsRepo>().Create(new Question()
             //{
             //    CategoryId = 1,
-            //    Number = 1,
+            //    Number = 3,
             //    Options = new List<Option>()
             //    {
             //        new Option() { Text = "Not at all", Weight = 1 },
@@ -81,7 +81,6 @@ namespace FormsApp
             //    },
             //    Text = "What is the prediction result of the model?",
             //});
-
         }
 
     }
