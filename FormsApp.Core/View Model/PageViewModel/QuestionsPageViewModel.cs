@@ -67,9 +67,14 @@ namespace FormsApp.Core.View_Model.PageViewModel
                 //Ensuring that all questions have been answered
                 foreach(QuestionViewModel vm in allQuestions)
                 {
-                    if(vm.SelectedOption == -1)
+                    if(vm.SelectedOption == -1 && vm.Type == Enums.QuestionType.MCQ)
                     {
                         Error = "Please ensure that all questions have been answered";
+                        break;
+                    }
+                    else if(string.IsNullOrEmpty(vm.Value) && vm.Type != Enums.QuestionType.MCQ)
+                    {
+                        Error = "Please ensure that all the questions have been answered";
                         break;
                     }
                 }

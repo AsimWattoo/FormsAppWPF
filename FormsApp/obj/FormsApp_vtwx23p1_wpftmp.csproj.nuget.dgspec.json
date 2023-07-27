@@ -1,0 +1,104 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\FormsApp.csproj": {}
+  },
+  "projects": {
+    "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp.Core\\FormsApp.Core.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp.Core\\FormsApp.Core.csproj",
+        "projectName": "FormsApp.Core",
+        "projectPath": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp.Core\\FormsApp.Core.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\FormsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\FormsApp.csproj",
+        "projectName": "FormsApp",
+        "projectPath": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\FormsApp.csproj",
+        "packagesPath": "C:\\Users\\asimw\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\asimw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp.Core\\FormsApp.Core.csproj": {
+                "projectPath": "D:\\Work\\Programming\\Visual Studio 2022\\C-Sharp\\.Net Framework\\WPF\\FormsApp\\FormsApp.Core\\FormsApp.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.4.1, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.300-preview.23179.2\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

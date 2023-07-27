@@ -7,9 +7,9 @@
              xmlns:at="clr-namespace:FormsApp.AttachedProperties"
              mc:Ignorable="d" 
              x:Name="collapsibleCtrl"
-             Height="130"
+             Height="100"
              Width="800"
-             at:CollapseHeight.Value="130"
+             at:CollapseHeight.Value="100"
              at:ExpandedHeight.Value="900"
              Margin="0 10"
              >
@@ -21,14 +21,14 @@
         
         <StackPanel>
 
-            <Border Height="130"
+            <Border Height="100"
                     BorderBrush="#dedede"
                     BorderThickness="0 0 0 0.7"
                     Background="Transparent"
                     MouseDown="Border_MouseDown">
 
                 <TextBlock Text="{Binding Heading, ElementName=collapsibleCtrl}"
-                           FontSize="30"
+                           FontSize="20"
                            Margin="20 0"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"

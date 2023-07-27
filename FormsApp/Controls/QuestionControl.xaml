@@ -4,9 +4,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:FormsApp"
+             xmlns:conv="clr-namespace:FormsApp.Converters"
              mc:Ignorable="d"
              x:Name="question_ctrl"
-             Height="370" 
+             Height="{Binding Height, FallbackValue=370}" 
              Width="700"
              Margin="0 10"
              >
@@ -59,7 +60,8 @@
             </Grid>
 
             <!--Answers Grid-->
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" 
+                        Visibility="{Binding Type, Converter={conv:QuestionTypeToVisibilityConverter}, ConverterParameter=MCQ}">
                 <ItemsControl ItemsSource="{Binding Options}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -75,7 +77,32 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </StackPanel>
-            
+
+            <StackPanel Grid.Row="1" 
+                        Visibility="{Binding Type, Converter={conv:QuestionTypeToVisibilityConverter}, ConverterParameter=Text}">
+                <TextBox Style="{StaticResource TextInput}"
+                         Tag="Enter Value"
+                         Text="{Binding Value}"
+                         HorizontalContentAlignment="Left"
+                         FontSize="18"
+                         Padding="10 5"
+                         Margin="20 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" 
+                        Visibility="{Binding Type, Converter={conv:QuestionTypeToVisibilityConverter}, ConverterParameter=Dropdown}">
+                <ComboBox Grid.Column="2" 
+                          Height="40"
+                          Padding="10 5"
+                          FontSize="18"
+                          Style="{DynamicResource MaterialDesignComboBox}"
+                          BorderThickness="0 0 0 1"
+                          IsReadOnly="True"
+                          SelectedValue="{Binding Value}"
+                          ItemsSource="{Binding DropDownValues}">
+                </ComboBox>
+            </StackPanel>
+
         </Grid>
     </Border>
 </UserControl>

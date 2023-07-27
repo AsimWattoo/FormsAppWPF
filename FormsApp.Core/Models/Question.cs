@@ -1,4 +1,5 @@
-﻿using FormsApp.Core.Interfaces;
+﻿using FormsApp.Core.Enums;
+using FormsApp.Core.Interfaces;
 using FormsApp.Core.Models.Base;
 using FormsApp.Core.View_Model.ControlViewModels;
 
@@ -42,6 +43,11 @@ namespace FormsApp.Core.Models
         /// </summary>
         public double Weight { get; set; } = 0;
 
+        /// <summary>
+        /// The type of the question
+        /// </summary>
+        public QuestionType Type { get; set; } = QuestionType.MCQ;
+
         #endregion
 
         #region Interface Methods
@@ -52,7 +58,7 @@ namespace FormsApp.Core.Models
         /// <returns></returns>
         public QuestionViewModel Transform()
         {
-            return new QuestionViewModel()
+            return new QuestionViewModel(Type)
             {
                 Number = Number,
                 Text = Text,
@@ -61,7 +67,7 @@ namespace FormsApp.Core.Models
                     .ToList()),
                 Weight = Weight,
                 CategoryId = CategoryId,
-                CategoryName = CategoryName
+                CategoryName = CategoryName,
             };
         }
 

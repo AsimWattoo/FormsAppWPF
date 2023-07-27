@@ -1,5 +1,6 @@
 ﻿using FormsApp.Core.Application;
 using FormsApp.Core.DB;
+using FormsApp.Core.Enums;
 using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
 using FormsApp.Core.Repos;
@@ -24,8 +25,24 @@ namespace FormsApp
             IoC.RegisterStatic(context);
             IoC.RegisterStatic<OptionsRepo>();
             IoC.RegisterStatic<CategoriesRepo>();
+            IoC.RegisterStatic<IndustryRepo>();
             IoC.RegisterStatic<QuestionsRepo>();
             IoC.RegisterStatic<RecommendationsRepo>();
+
+            //IoC.Get<IndustryRepo>().Create(new Industry()
+            //{
+            //    Name = "Health",
+            //});
+
+            //IoC.Get<IndustryRepo>().Create(new Industry()
+            //{
+            //    Name = "Manufacturing",
+            //});
+
+            //IoC.Get<CategoriesRepo>().Create(new Category()
+            //{
+            //    Name = "General"
+            //});
 
             //IoC.Get<CategoriesRepo>().Create(new Category()
             //{
@@ -41,6 +58,31 @@ namespace FormsApp
             //{
             //    CategoryId = 1,
             //    Number = 1,
+            //    Type = QuestionType.Dropdown,
+            //    Text = "Select your industry:",
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //{
+            //    CategoryId = 1,
+            //    Number = 2,
+            //    Type = QuestionType.Text,
+            //    Text = "What is the size of your industry?",
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //{
+            //    CategoryId = 1,
+            //    Number = 3,
+            //    Type = QuestionType.Text,
+            //    Text = "What is your post in the company?",
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //{
+            //    CategoryId = 2,
+            //    Number = 4,
+            //    Type = QuestionType.MCQ,
             //    Options = new List<Option>()
             //    {
             //        new Option() { Text = "Not at all", Weight = 1 },
@@ -54,8 +96,9 @@ namespace FormsApp
 
             //IoC.Get<QuestionsRepo>().Create(new Question()
             //{
-            //    CategoryId = 1,
-            //    Number = 2,
+            //    CategoryId = 2,
+            //    Number = 5,
+            //    Type = QuestionType.MCQ,
             //    Options = new List<Option>()
             //    {
             //        new Option() { Text = "Not at all", Weight = 1 },
@@ -69,8 +112,9 @@ namespace FormsApp
 
             //IoC.Get<QuestionsRepo>().Create(new Question()
             //{
-            //    CategoryId = 2,
-            //    Number = 3,
+            //    CategoryId = 3,
+            //    Number = 6,
+            //    Type = QuestionType.MCQ,
             //    Options = new List<Option>()
             //    {
             //        new Option() { Text = "Not at all", Weight = 1 },

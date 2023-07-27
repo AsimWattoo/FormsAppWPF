@@ -1,5 +1,7 @@
 ﻿using FormsApp.Animations.FrameworkElementAnimations;
 using FormsApp.AttachedProperties;
+using FormsApp.Core.Enums;
+using FormsApp.Core.View_Model.ControlViewModels;
 
 using System.Windows;
 using System.Windows.Controls;
@@ -89,8 +91,14 @@ namespace FormsApp
                 ctrl.Loaded += (sender, e) =>
                 {
                     ItemsControl control = sender as ItemsControl;
-                    double totalHeight = control.Items.Count * itemHeight + control.Items.Count * 30 + 130;
-                    ExpandedHeight.SetValue(d, totalHeight);
+                    if(control.Items.Count > 0)
+                    {
+                        if (control.Items[0] is QuestionViewModel vm)
+                        {
+                            double totalHeight = control.Items.Count * (vm.Type == QuestionType.MCQ ? itemHeight : 150) + control.Items.Count * 30 + 100;
+                            ExpandedHeight.SetValue(d, totalHeight);
+                        }
+                    }
                 };
             }
         }

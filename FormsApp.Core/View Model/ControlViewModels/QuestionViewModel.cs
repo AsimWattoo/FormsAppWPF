@@ -1,5 +1,8 @@
-﻿using FormsApp.Core.Interfaces;
+﻿using FormsApp.Core.Enums;
+using FormsApp.Core.Interfaces;
+using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
+using FormsApp.Core.Repos;
 using FormsApp.Core.View_Model.Base;
 
 using System;
@@ -51,6 +54,35 @@ namespace FormsApp.Core.View_Model.ControlViewModels
         /// </summary>
         public double Weight { get; set; } = 0;
 
+        /// <summary>
+        /// The type of the question
+        /// </summary>
+        public QuestionType Type { get; set; } = QuestionType.MCQ;
+
+        /// <summary>
+        /// The height of the control based on question type
+        /// </summary>
+        public double Height
+        {
+            get
+            {
+                if (Type == QuestionType.MCQ)
+                    return 370;
+                else
+                    return 150;
+            }
+        }
+
+        /// <summary>
+        /// The value of the question
+        /// </summary>
+        public string Value { get; set; } = string.Empty;
+
+        /// <summary>
+        /// The list of dropdown values
+        /// </summary>
+        public List<string> DropDownValues { get; set; } = new List<string>();
+
         #endregion
 
         #region Commands
@@ -69,15 +101,42 @@ namespace FormsApp.Core.View_Model.ControlViewModels
         /// </summary>
         public QuestionViewModel()
         {
+            _initializeCommands();
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public QuestionViewModel(QuestionType type)
+        {
+            Type = type;
+
+            if(type == QuestionType.Dropdown)
+            {
+                DropDownValues = IoC.Get<IndustryRepo>().GetAll().Select(t => t.Name).ToList();
+            }
+
+            _initializeCommands();
+        }
+
+        #endregion
+
+        #region Private Members
+
+        /// <summary>
+        /// Initializes the command
+        /// </summary>
+        private void _initializeCommands()
+        {
             OptionChecked = new RelayParameterizedCommand(obj =>
             {
                 int num;
-                if(int.TryParse(obj.ToString(), out num))
+                if (int.TryParse(obj.ToString(), out num))
                 {
                     if (num == SelectedOption)
                         return;
                     //Unselecting the previously selected option
-                    if(SelectedOption != -1)
+                    if (SelectedOption != -1)
                     {
                         Options.Where(t => t.Number == SelectedOption).First().Checked = false;
                     }

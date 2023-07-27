@@ -1,7 +1,9 @@
-﻿using FormsApp.Core.IoCContainer;
+﻿using FormsApp.Core.Enums;
+using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
 using FormsApp.Core.Repos.Base;
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -57,6 +59,7 @@ Text TEXT,
 Weight REAL,
 CategoryId INTEGER,
 CategoryName TEXT,
+Type INTEGER,
 PRIMARY KEY ('Id'));";
         }
 
@@ -67,6 +70,11 @@ PRIMARY KEY ('Id'));";
         /// <returns></returns>
         protected override Question GetItem(object[] array)
         {
+            QuestionType questionType;
+
+            if (!Enum.TryParse(array[6].ToString(), out questionType))
+                questionType = QuestionType.MCQ;
+
             return new Question()
             {
                 Id = int.Parse(array[0].ToString()),
@@ -74,7 +82,8 @@ PRIMARY KEY ('Id'));";
                 Text = array[2].ToString(),
                 Weight = double.Parse(array[3].ToString()),
                 CategoryId = int.Parse(array[4].ToString()),
-                CategoryName = array[5].ToString()
+                CategoryName = array[5].ToString(),
+                Type = questionType,
             };
         }
 
@@ -85,7 +94,7 @@ PRIMARY KEY ('Id'));";
         /// <returns></returns>
         protected override string GetInsertQuery(Question item)
         {
-            return $@"INSERT INTO Questions (Id, Number, Text, Weight, CategoryId, CategoryName) VALUES ({item.Id},{item.Number},'{item.Text}',{item.Weight}, {item.CategoryId}, '{item.CategoryName}')";
+            return $@"INSERT INTO Questions (Id, Number, Text, Weight, CategoryId, CategoryName, Type) VALUES ({item.Id},{item.Number},'{item.Text}',{item.Weight}, {item.CategoryId}, '{item.CategoryName}', {(int)item.Type})";
         }
 
         /// <summary>
