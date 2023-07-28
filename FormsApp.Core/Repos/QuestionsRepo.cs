@@ -60,6 +60,7 @@ Weight REAL,
 CategoryId INTEGER,
 CategoryName TEXT,
 Type INTEGER,
+Topic INTEGER,
 PRIMARY KEY ('Id'));";
         }
 
@@ -75,6 +76,11 @@ PRIMARY KEY ('Id'));";
             if (!Enum.TryParse(array[6].ToString(), out questionType))
                 questionType = QuestionType.MCQ;
 
+            QuestionTopic topic;
+
+            if (!Enum.TryParse(array[7].ToString(), out topic))
+                topic = QuestionTopic.Other;
+
             return new Question()
             {
                 Id = int.Parse(array[0].ToString()),
@@ -84,6 +90,7 @@ PRIMARY KEY ('Id'));";
                 CategoryId = int.Parse(array[4].ToString()),
                 CategoryName = array[5].ToString(),
                 Type = questionType,
+                Topic = topic,
             };
         }
 
@@ -94,7 +101,7 @@ PRIMARY KEY ('Id'));";
         /// <returns></returns>
         protected override string GetInsertQuery(Question item)
         {
-            return $@"INSERT INTO Questions (Id, Number, Text, Weight, CategoryId, CategoryName, Type) VALUES ({item.Id},{item.Number},'{item.Text}',{item.Weight}, {item.CategoryId}, '{item.CategoryName}', {(int)item.Type})";
+            return $@"INSERT INTO Questions (Id, Number, Text, Weight, CategoryId, CategoryName, Type, Topic) VALUES ({item.Id},{item.Number},'{item.Text}',{item.Weight}, {item.CategoryId}, '{item.CategoryName}', {(int)item.Type}, {(int)item.Topic})";
         }
 
         /// <summary>
@@ -104,7 +111,7 @@ PRIMARY KEY ('Id'));";
         /// <returns></returns>
         protected override string GetUpdateQuery(Question item)
         {
-            return $@"Number = {item.Number}, Text = '{item.Text}', Weight = {item.Weight}, CategoryId = {item.CategoryId}, CategoryName = '{item.CategoryName}'";
+            return $@"Number = {item.Number}, Text = '{item.Text}', Weight = {item.Weight}, CategoryId = {item.CategoryId}, CategoryName = '{item.CategoryName}, Topic = {item.Topic}'";
         }
 
         /// <summary>

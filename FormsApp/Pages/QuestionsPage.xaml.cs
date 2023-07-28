@@ -9,7 +9,7 @@ namespace FormsApp
     /// </summary>
     public partial class QuestionsPage : BasePage<QuestionsPageViewModel>
     {
-        public QuestionsPage() : base(new QuestionsPageViewModel())
+        public QuestionsPage(QuestionsPageViewModel vm) : base(vm)
         {
             InitializeComponent();
         }

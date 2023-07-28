@@ -85,6 +85,15 @@
                         </StackPanel>
                     </Grid>
 
+                    <Button Style="{StaticResource SubmitButton}"
+                            Content="Restart"
+                            Command="{Binding ResetCommand}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="0 20"
+                            Width="150"
+                            Height="40"/>
+
                 </StackPanel>
 
             </ScrollViewer>

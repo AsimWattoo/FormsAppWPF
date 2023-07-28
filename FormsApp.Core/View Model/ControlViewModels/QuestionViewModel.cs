@@ -83,6 +83,11 @@ namespace FormsApp.Core.View_Model.ControlViewModels
         /// </summary>
         public List<string> DropDownValues { get; set; } = new List<string>();
 
+        /// <summary>
+        /// The topic of the question
+        /// </summary>
+        public QuestionTopic Topic { get; set; }
+
         #endregion
 
         #region Commands
@@ -107,13 +112,31 @@ namespace FormsApp.Core.View_Model.ControlViewModels
         /// <summary>
         /// Constructor
         /// </summary>
-        public QuestionViewModel(QuestionType type)
+        public QuestionViewModel(QuestionType type, QuestionTopic topic)
         {
             Type = type;
+            Topic = topic;
 
-            if(type == QuestionType.Dropdown)
+            if(type == QuestionType.Dropdown && topic == QuestionTopic.Industry)
             {
-                DropDownValues = IoC.Get<IndustryRepo>().GetAll().Select(t => t.Name).ToList();
+                DropDownValues = IoC.Get<IndustryRepo>()
+                    .GetAll()
+                    .Select(t => t.Name)
+                    .ToList();
+            }
+            else if (type == QuestionType.Dropdown && topic == QuestionTopic.IndustrySize)
+            {
+                DropDownValues = IoC.Get<IndustrySizeRepo>()
+                    .GetAll()
+                    .Select(t => t.Size)
+                    .ToList();
+            }
+            else if (type == QuestionType.Dropdown && topic == QuestionTopic.CompanyPosition)
+            {
+                DropDownValues = IoC.Get<CompanyPositionRepo>()
+                    .GetAll()
+                    .Select(t => t.Position)
+                    .ToList();
             }
 
             _initializeCommands();

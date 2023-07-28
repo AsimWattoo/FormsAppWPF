@@ -70,3 +70,5 @@ D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\Forms
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\FormsApp.pdb
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\FormsApp.genruntimeconfig.cache
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\ref\FormsApp.dll
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CollapsibleControl.g.cs
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CollapsibleControl.baml

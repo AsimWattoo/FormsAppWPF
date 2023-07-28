@@ -1,4 +1,4 @@
-﻿using FormsApp.Core.Engines;
+﻿using FormsApp.Core.Application;
 using FormsApp.Core.Enums;
 using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
@@ -8,9 +8,9 @@ using FormsApp.Core.View_Model.ControlViewModels;
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
-using System.Security.Cryptography;
+using System.Windows.Input;
 
 namespace FormsApp.Core.View_Model.PageViewModel
 {
@@ -30,6 +30,15 @@ namespace FormsApp.Core.View_Model.PageViewModel
 
         #endregion
 
+        #region Commands
+
+        /// <summary>
+        /// The command to go to landing page
+        /// </summary>
+        public ICommand ResetCommand { get; set; }
+
+        #endregion
+
         #region Constructor
 
         /// <summary>
@@ -37,8 +46,14 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// </summary>
         public ResultPageViewModel(Dictionary<string,List<QuestionViewModel>> questions)
         {
+
+            ResetCommand = new RelayCommand(() =>
+            {
+                IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Landing);
+            });
+
             //Finding the industry type
-            QuestionViewModel industryQuestion = questions["General"].Where(t => t.Type == QuestionType.Dropdown).First();
+            QuestionViewModel industryQuestion = questions["General"].Where(t => t.Type == QuestionType.Dropdown && t.Topic == QuestionTopic.Industry).First();
             //Finding the id of the industry
             int industryId = IoC.Get<IndustryRepo>().GetAll().Where(t => t.Name == industryQuestion.Value).First().Id;
 

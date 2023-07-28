@@ -18,7 +18,7 @@ namespace FormsApp.Converters
             switch (page)
             {
                 case ApplicationPages.Questions:
-                    return new QuestionsPage();
+                    return new QuestionsPage(viewModel as QuestionsPageViewModel);
                 case ApplicationPages.EditableQuestions:
                     return new EditableQuestionsPage();
                 case ApplicationPages.Add_Edit_Form:
@@ -27,6 +27,8 @@ namespace FormsApp.Converters
                     return new RecommendationsPage();
                 case ApplicationPages.Result:
                     return new ResultsPage(viewModel as ResultPageViewModel ?? new ResultPageViewModel());
+                case ApplicationPages.Landing:
+                    return new LandingPage();
                 default:
                     return new DefaultPage();
             }

@@ -48,6 +48,11 @@ namespace FormsApp.Core.Models
         /// </summary>
         public QuestionType Type { get; set; } = QuestionType.MCQ;
 
+        /// <summary>
+        /// The topic of the question
+        /// </summary>
+        public QuestionTopic Topic { get; set; } = QuestionTopic.Other;
+
         #endregion
 
         #region Interface Methods
@@ -58,7 +63,7 @@ namespace FormsApp.Core.Models
         /// <returns></returns>
         public QuestionViewModel Transform()
         {
-            return new QuestionViewModel(Type)
+            return new QuestionViewModel(Type, Topic)
             {
                 Number = Number,
                 Text = Text,

@@ -69,6 +69,7 @@
     <Compile Include="DB\DBContext.cs" />
     <Compile Include="Engines\RulesEngine.cs" />
     <Compile Include="Enums\OperationMode.cs" />
+    <Compile Include="Enums\QuestionTopic.cs" />
     <Compile Include="Enums\QuestionType.cs" />
     <Compile Include="Exceptions\DuplicateKeyException.cs" />
     <Compile Include="Interfaces\ITransformable.cs" />
@@ -77,6 +78,8 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Criteria.cs" />
     <Compile Include="Models\Industry.cs" />
+    <Compile Include="Models\CompanyPosition.cs" />
+    <Compile Include="Models\Industrysize.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Recommendation.cs" />
@@ -85,6 +88,8 @@
     <Compile Include="Repos\CategoriesRepo.cs" />
     <Compile Include="Repos\CriteriaRepo.cs" />
     <Compile Include="Repos\IndustryRepo.cs" />
+    <Compile Include="Repos\CompanyPositionRepo.cs" />
+    <Compile Include="Repos\IndustrySizeRepo.cs" />
     <Compile Include="Repos\OptionsRepo.cs" />
     <Compile Include="Repos\QuestionsRepo.cs" />
     <Compile Include="Repos\RecommendationsRepo.cs" />
@@ -98,6 +103,7 @@
     <Compile Include="View Model\ControlViewModels\RecommendationViewModel.cs" />
     <Compile Include="View Model\PageViewModel\AddEditQuestionViewModel.cs" />
     <Compile Include="View Model\PageViewModel\EditableQuestionsViewModel.cs" />
+    <Compile Include="View Model\PageViewModel\LandingPageViewModel.cs" />
     <Compile Include="View Model\PageViewModel\QuestionsPageViewModel.cs" />
     <Compile Include="View Model\PageViewModel\RecommendationsPageViewModel.cs" />
     <Compile Include="View Model\PageViewModel\ResultPageViewModel.cs" />

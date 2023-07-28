@@ -24,7 +24,7 @@ namespace FormsApp.ViewModels
         /// <summary>
         /// The title of the window
         /// </summary>
-        public string Title { get; set; } = "Forms";
+        public string Title { get; set; } = "AI Ethics Compass";
 
         /// <summary>
         /// The height of the caption

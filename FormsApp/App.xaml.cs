@@ -23,6 +23,8 @@ namespace FormsApp
             IoC.RegisterStatic<ApplicationViewModel>();
             DBContext context = new DBContext("Database.db");
             IoC.RegisterStatic(context);
+            IoC.RegisterStatic<CompanyPositionRepo>();
+            IoC.RegisterStatic<IndustrySizeRepo>();
             IoC.RegisterStatic<OptionsRepo>();
             IoC.RegisterStatic<CategoriesRepo>();
             IoC.RegisterStatic<IndustryRepo>();
@@ -31,6 +33,21 @@ namespace FormsApp
             IoC.RegisterStatic<RecommendationsRepo>();
 
             /*
+
+            IoC.Get<CompanyPositionRepo>().Create(new List<CompanyPosition>()
+            {
+                new CompanyPosition("CEO"),
+                new CompanyPosition("CTO"),
+                new CompanyPosition("Technical Officer"),
+            });
+
+            IoC.Get<IndustrySizeRepo>().Create(new List<IndustrySize>()
+            {
+                new IndustrySize("0-10"),
+                new IndustrySize("11-20"),
+                new IndustrySize("21-50"),
+                new IndustrySize("Over 50"),
+            });
 
             IoC.Get<IndustryRepo>().Create(new List<Industry>()
             {
@@ -122,20 +139,23 @@ namespace FormsApp
                     Number = 1,
                     Type = QuestionType.Dropdown,
                     Text = "Select your industry:",
+                    Topic = QuestionTopic.Industry,
                 }, // 1
                 new Question()
                 {
                     CategoryId = 1,
                     Number = 2,
-                    Type = QuestionType.Text,
+                    Type = QuestionType.Dropdown,
+                    Topic = QuestionTopic.IndustrySize,
                     Text = "What is the size of your industry?",
                 }, // 2
                 new Question()
                 {
                     CategoryId = 1,
                     Number = 3,
-                    Type = QuestionType.Text,
+                    Type = QuestionType.Dropdown,
                     Text = "What is your post in the company?",
+                    Topic = QuestionTopic.CompanyPosition,
                 }, // 3
                 new Question()
                 {
@@ -148,7 +168,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 4
@@ -163,7 +183,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 5
@@ -178,7 +198,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 6
@@ -193,7 +213,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 7
@@ -208,7 +228,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 8
@@ -223,7 +243,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 9
@@ -238,7 +258,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 10
@@ -253,7 +273,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 11
@@ -268,7 +288,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 12
@@ -283,7 +303,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 13
@@ -298,7 +318,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 14
@@ -313,7 +333,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 15
@@ -328,7 +348,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 16
@@ -343,7 +363,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 17
@@ -358,7 +378,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 18
@@ -373,7 +393,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 19
@@ -388,7 +408,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 20
@@ -403,7 +423,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 21
@@ -418,7 +438,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 22
@@ -433,7 +453,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 23
@@ -448,7 +468,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 24
@@ -463,7 +483,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 25
@@ -478,7 +498,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 26
@@ -493,7 +513,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 27
@@ -508,7 +528,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 28
@@ -523,7 +543,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 29
@@ -538,7 +558,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 30
@@ -553,7 +573,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 31
@@ -568,7 +588,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 32
@@ -583,7 +603,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 33
@@ -598,7 +618,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 34
@@ -613,7 +633,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 35
@@ -628,7 +648,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 36
@@ -643,7 +663,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 37
@@ -658,7 +678,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 38
@@ -673,7 +693,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 39
@@ -688,7 +708,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 40
@@ -703,7 +723,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 41
@@ -718,7 +738,7 @@ namespace FormsApp
                         new Option() { Text = "Not at all", Weight = 1 },
                         new Option() { Text = "To a small extent", Weight = 2 },
                         new Option() { Text = "Moderately", Weight = 3 },
-                        new Option() { Text = "To a great extend", Weight = 4 },
+                        new Option() { Text = "To a great extent", Weight = 4 },
                         new Option() { Text = "Completely", Weight = 5 }
                     },
                 }, // 42

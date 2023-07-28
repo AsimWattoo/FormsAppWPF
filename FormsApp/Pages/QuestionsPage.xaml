@@ -25,7 +25,9 @@
                                     <ItemsControl ItemsSource="{Binding Value}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
-                                                <local:QuestionControl DataContext="{Binding}" Height="130"/>
+                                                <local:QuestionControl DataContext="{Binding}" 
+                                                                       Height="130"
+                                                                       Width="1000"/>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>

@@ -8,6 +8,7 @@
         xmlns:ctrl="clr-namespace:FormsApp.Controls"
         mc:Ignorable="d"
         WindowStyle="None"
+        WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         Title="Type Title Here" Height="450" Width="800">
@@ -26,7 +27,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Column="0" 
+                                <!--<StackPanel Grid.Column="0" 
                                             Orientation="Vertical"
                                             Background="{StaticResource Background_Dark}"
                                             Width="50"
@@ -34,7 +35,7 @@
                                     <Grid Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}, Path=ActualWidth}"
                                           Height="{Binding CaptionHeight}"/>
                                     <local:SidebarButton Command="{Binding FormCommand}"  Icon="{StaticResource FormIcon}" Selected="{Binding FormButtonSelected}"/>
-                                </StackPanel>
+                                </StackPanel>-->
 
                                 <Grid Grid.Column="1">
 

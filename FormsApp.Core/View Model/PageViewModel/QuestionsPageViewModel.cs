@@ -42,9 +42,13 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public QuestionsPageViewModel()
+        public QuestionsPageViewModel(List<QuestionViewModel> previousQuestions)
         {
-            List<QuestionViewModel> questions = IoC.Get<QuestionsRepo>().GetAll().Select(t => t.Transform()).ToList();
+            List<QuestionViewModel> questions = IoC.Get<QuestionsRepo>()
+                .GetAll()
+                .Where(t => t.CategoryId != 1)
+                .Select(t => t.Transform())
+                .ToList();
 
             List<string> categories = questions.Select(t => t.CategoryName)
                 .Distinct()
@@ -81,7 +85,9 @@ namespace FormsApp.Core.View_Model.PageViewModel
 
                 if (!string.IsNullOrEmpty(Error))
                     return;
-                
+
+                Questions.Add("General", previousQuestions);
+
                 //Sending to the next page
                 IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Result, new ResultPageViewModel(Questions));
 
