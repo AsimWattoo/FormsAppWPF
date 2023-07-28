@@ -26,104 +26,138 @@ namespace FormsApp
             IoC.RegisterStatic<OptionsRepo>();
             IoC.RegisterStatic<CategoriesRepo>();
             IoC.RegisterStatic<IndustryRepo>();
+            IoC.RegisterStatic<CriteriaRepo>();
             IoC.RegisterStatic<QuestionsRepo>();
             IoC.RegisterStatic<RecommendationsRepo>();
 
-            //IoC.Get<IndustryRepo>().Create(new Industry()
+            //IoC.Get<IndustryRepo>().Create(new List<Industry>()
             //{
-            //    Name = "Health",
-            //});
-
-            //IoC.Get<IndustryRepo>().Create(new Industry()
-            //{
-            //    Name = "Manufacturing",
-            //});
-
-            //IoC.Get<CategoriesRepo>().Create(new Category()
-            //{
-            //    Name = "General"
-            //});
-
-            //IoC.Get<CategoriesRepo>().Create(new Category()
-            //{
-            //    Name = "Accuracy"
-            //});
-
-            //IoC.Get<CategoriesRepo>().Create(new Category()
-            //{
-            //    Name = "Bias"
-            //});
-
-            //IoC.Get<QuestionsRepo>().Create(new Question()
-            //{
-            //    CategoryId = 1,
-            //    Number = 1,
-            //    Type = QuestionType.Dropdown,
-            //    Text = "Select your industry:",
-            //});
-
-            //IoC.Get<QuestionsRepo>().Create(new Question()
-            //{
-            //    CategoryId = 1,
-            //    Number = 2,
-            //    Type = QuestionType.Text,
-            //    Text = "What is the size of your industry?",
-            //});
-
-            //IoC.Get<QuestionsRepo>().Create(new Question()
-            //{
-            //    CategoryId = 1,
-            //    Number = 3,
-            //    Type = QuestionType.Text,
-            //    Text = "What is your post in the company?",
-            //});
-
-            //IoC.Get<QuestionsRepo>().Create(new Question()
-            //{
-            //    CategoryId = 2,
-            //    Number = 4,
-            //    Type = QuestionType.MCQ,
-            //    Options = new List<Option>()
+            //    new Industry()
             //    {
-            //        new Option() { Text = "Not at all", Weight = 1 },
-            //        new Option() { Text = "A little", Weight = 2 },
-            //        new Option() { Text = "Moderate", Weight = 3 },
-            //        new Option() { Text = "Good", Weight = 4 },
-            //        new Option() { Text = "Very Good", Weight = 5 }
+            //        Name = "Health",
             //    },
-            //    Text = "What is the accuracy of the model",
+            //    new Industry()
+            //    {
+            //        Name = "Manufacturing",
+            //    },
             //});
 
-            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //IoC.Get<CategoriesRepo>().Create(new List<Category>()
             //{
-            //    CategoryId = 2,
-            //    Number = 5,
-            //    Type = QuestionType.MCQ,
-            //    Options = new List<Option>()
+            //    new Category()
             //    {
-            //        new Option() { Text = "Not at all", Weight = 1 },
-            //        new Option() { Text = "A little", Weight = 2 },
-            //        new Option() { Text = "Moderate", Weight = 3 },
-            //        new Option() { Text = "Good", Weight = 4 },
-            //        new Option() { Text = "Very Good", Weight = 5 }
+            //        Name = "General"
             //    },
-            //    Text = "How much as you satisfied with the model",
+            //    new Category()
+            //    {
+            //        Name = "Accuracy"
+            //    },
+            //    new Category()
+            //    {
+            //        Name = "Bias"
+            //    },
             //});
 
-            //IoC.Get<QuestionsRepo>().Create(new Question()
+            //IoC.Get<CriteriaRepo>().Create(new List<Criteria>()
             //{
-            //    CategoryId = 3,
-            //    Number = 6,
-            //    Type = QuestionType.MCQ,
-            //    Options = new List<Option>()
+            //    new Criteria()
             //    {
-            //        new Option() { Text = "Not at all", Weight = 1 },
-            //        new Option() { Text = "A little", Weight = 2 },
-            //        new Option() { Text = "Moderate", Weight = 3 },
-            //        new Option() { Text = "Good", Weight = 4 },
-            //        new Option() { Text = "Very Good", Weight = 5 }
+            //        CategoryId = 2,
+            //        IndustryId = 1,
+            //        Weight = 3,
+            //        PassingPoints = 9,
             //    },
-            //    Text = "What is the prediction result of the model?",
+            //    new Criteria()
+            //    {
+            //        CategoryId = 3,
+            //        IndustryId = 1,
+            //        Weight = 2,
+            //        PassingPoints = 8
+            //    },
+            //    new Criteria()
+            //    {
+            //        CategoryId = 2,
+            //        IndustryId = 2,
+            //        Weight = 2,
+            //        PassingPoints = 8,
+            //    },
+            //    new Criteria()
+            //    {
+            //        CategoryId = 3,
+            //        IndustryId = 2,
+            //        Weight = 3,
+            //        PassingPoints = 9,
+            //    }
+            //});
+
+            //IoC.Get<QuestionsRepo>().Create(new List<Question>()
+            //{
+            //    new Question()
+            //    {
+            //        CategoryId = 1,
+            //        Number = 1,
+            //        Type = QuestionType.Dropdown,
+            //        Text = "Select your industry:",
+            //    },
+            //    new Question()
+            //    {
+            //        CategoryId = 1,
+            //        Number = 2,
+            //        Type = QuestionType.Text,
+            //        Text = "What is the size of your industry?",
+            //    },
+            //    new Question()
+            //    {
+            //        CategoryId = 1,
+            //        Number = 3,
+            //        Type = QuestionType.Text,
+            //        Text = "What is your post in the company?",
+            //    },
+            //    new Question()
+            //    {
+            //        CategoryId = 2,
+            //        Number = 4,
+            //        Type = QuestionType.MCQ,
+            //        Options = new List<Option>()
+            //        {
+            //            new Option() { Text = "Not at all", Weight = 1 },
+            //            new Option() { Text = "A little", Weight = 2 },
+            //            new Option() { Text = "Moderate", Weight = 3 },
+            //            new Option() { Text = "Good", Weight = 4 },
+            //            new Option() { Text = "Very Good", Weight = 5 }
+            //        },
+            //        Text = "What is the accuracy of the model",
+            //    },
+            //    new Question()
+            //    {
+            //        CategoryId = 2,
+            //        Number = 5,
+            //        Type = QuestionType.MCQ,
+            //        Options = new List<Option>()
+            //        {
+            //            new Option() { Text = "Not at all", Weight = 1 },
+            //            new Option() { Text = "A little", Weight = 2 },
+            //            new Option() { Text = "Moderate", Weight = 3 },
+            //            new Option() { Text = "Good", Weight = 4 },
+            //            new Option() { Text = "Very Good", Weight = 5 }
+            //        },
+            //        Text = "How much as you satisfied with the model",
+            //    },
+            //    new Question()
+            //    {
+            //        CategoryId = 3,
+            //        Number = 6,
+            //        Type = QuestionType.MCQ,
+            //        Options = new List<Option>()
+            //        {
+            //            new Option() { Text = "Not at all", Weight = 1 },
+            //            new Option() { Text = "A little", Weight = 2 },
+            //            new Option() { Text = "Moderate", Weight = 3 },
+            //            new Option() { Text = "Good", Weight = 4 },
+            //            new Option() { Text = "Very Good", Weight = 5 }
+            //        },
+            //        Text = "What is the prediction result of the model?",
+            //    }
             //});
         }
 

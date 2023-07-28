@@ -1,13 +1,16 @@
 ﻿using FormsApp.Core.Engines;
+using FormsApp.Core.Enums;
 using FormsApp.Core.IoCContainer;
 using FormsApp.Core.Models;
 using FormsApp.Core.Repos;
 using FormsApp.Core.View_Model.Base;
 using FormsApp.Core.View_Model.ControlViewModels;
 
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace FormsApp.Core.View_Model.PageViewModel
 {
@@ -16,14 +19,14 @@ namespace FormsApp.Core.View_Model.PageViewModel
         #region Public Properties
 
         /// <summary>
-        /// The recommendations for each questions
-        /// </summary>
-        public ObservableCollection<QuestionWiseRecommendations> QuestionWiseRecommendations { get; set; } = new ObservableCollection<QuestionWiseRecommendations>();
-
-        /// <summary>
         /// The overall recommendation based on the answers
         /// </summary>
         public QuestionWiseRecommendations OverallRecommendation { get; set; } = new QuestionWiseRecommendations();
+
+        /// <summary>
+        /// The total score
+        /// </summary>
+        public double TotalScore { get; set; } = 0;
 
         #endregion
 
@@ -32,41 +35,45 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public ResultPageViewModel(List<QuestionViewModel> questions)
+        public ResultPageViewModel(Dictionary<string,List<QuestionViewModel>> questions)
         {
-            //Getting list of recommendations
-            List<Recommendation> recommendations = IoC.Get<RecommendationsRepo>().GetAll();
+            //Finding the industry type
+            QuestionViewModel industryQuestion = questions["General"].Where(t => t.Type == QuestionType.Dropdown).First();
+            //Finding the id of the industry
+            int industryId = IoC.Get<IndustryRepo>().GetAll().Where(t => t.Name == industryQuestion.Value).First().Id;
 
-            //Finding the overall result
-            double overall = 0;
-            foreach(QuestionViewModel question in questions)
-            {
-                double selectedWeight = question.Options.Where(t => t.Number == question.SelectedOption).First().Weight;
-                overall += (selectedWeight * question.Weight) / 100;
-            }
+            //Getting list of all the criteria
+            List<Criteria> criteria = IoC.Get<CriteriaRepo>().GetAll();
+            //Finding the criteria belonging to the selected industry
+            criteria = criteria.Where(t => t.IndustryId == industryId).ToList();
+            //Creating a dictionary from the criteria
+            Dictionary<int, Criteria> catCriteria = criteria.ToDictionary(t => t.CategoryId, t => t);
 
-            questions.Insert(0, new QuestionViewModel()
+            //Find average score of each category
+            List<Category> categories = IoC.Get<CategoriesRepo>().GetAll();
+
+            double passedCategories = 0;
+
+            foreach(Category category in categories)
             {
-                Number = 0,
-                Options = new ObservableCollection<OptionSelectViewModel>() 
+                //Skipping the general category of questions
+                if (category.Name == "General")
+                    continue;
+
+                //Finding average score of each category
+                double averageWeight = questions[category.Name].Average(t => t.Options.Where(option => option.Number == t.SelectedOption).First().Weight);
+
+                double totalWeight = averageWeight * catCriteria[category.Id].Weight;
+                if(totalWeight >= catCriteria[category.Id].PassingPoints)
                 {
-                    new OptionSelectViewModel() { Number = 1, Weight = overall },
-                },
-                SelectedOption = 1,
-            });
-
-            //Storing the recommendations
-            List<QuestionWiseRecommendations> questionRecommendations = RulesEngine.GenerateRecommendations(questions, recommendations);
-
-            OverallRecommendation = questionRecommendations.Where(t => t.QuestionId == 0).FirstOrDefault() ?? new QuestionWiseRecommendations()
-            {
-                QuestionId = 0,
-                Result = overall
-            };
-
-            //Removing the overall recommendation from the list
-            questionRecommendations.Remove(OverallRecommendation);
-            QuestionWiseRecommendations = new ObservableCollection<QuestionWiseRecommendations>(questionRecommendations);
+                    passedCategories++;
+                }
+                else
+                {
+                    OverallRecommendation.Recommendations.Add($"Try to improve {category.Name}");
+                }
+            }
+            OverallRecommendation.Result = Math.Round((passedCategories / (categories.Count - 1)) * 100, 2);
         }
 
         /// <summary>

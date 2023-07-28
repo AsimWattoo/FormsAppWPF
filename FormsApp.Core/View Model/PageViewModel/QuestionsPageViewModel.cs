@@ -83,7 +83,7 @@ namespace FormsApp.Core.View_Model.PageViewModel
                     return;
                 
                 //Sending to the next page
-                IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Result, new ResultPageViewModel(allQuestions));
+                IoC.Get<ApplicationViewModel>().ChangePage(ApplicationPages.Result, new ResultPageViewModel(Questions));
 
             });
         }

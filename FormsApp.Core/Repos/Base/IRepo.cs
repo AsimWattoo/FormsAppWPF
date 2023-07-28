@@ -291,6 +291,18 @@ namespace FormsApp.Core.Repos.Base
         }
 
         /// <summary>
+        /// Creates list of items
+        /// </summary>
+        /// <param name="models"></param>
+        public void Create(List<T> models)
+        {
+            foreach(T item in models)
+            {
+                Create(item);
+            }
+        }
+
+        /// <summary>
         /// Deletes the model with the specified id
         /// </summary>
         /// <param name="id"></param>
