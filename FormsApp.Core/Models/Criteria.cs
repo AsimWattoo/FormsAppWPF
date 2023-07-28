@@ -32,5 +32,28 @@ namespace FormsApp.Core.Models
         public double PassingPoints { get; set; } = 0;
 
         #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Criteria()
+        {
+            
+        }
+
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        public Criteria(int industryId, int categoryId, double weight, double passingPoints)
+        {
+            CategoryId = categoryId;
+            IndustryId = industryId;
+            Weight = weight;
+            PassingPoints = passingPoints;
+        }
+
+        #endregion
     }
 }

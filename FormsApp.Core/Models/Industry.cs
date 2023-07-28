@@ -12,5 +12,22 @@ namespace FormsApp.Core.Models
         public string Name { get; set; }
 
         #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Industry(string name)
+        {
+            Name = name;
+        }
+
+        public Industry()
+        {
+            
+        }
+
+        #endregion
     }
 }

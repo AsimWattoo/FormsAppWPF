@@ -12,5 +12,25 @@ namespace FormsApp.Core.Models
         public string Name { get; set; } = string.Empty;
 
         #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Category()
+        {
+            
+        }
+
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        public Category(string name)
+        {
+            Name = name;
+        }
+
+        #endregion
     }
 }
