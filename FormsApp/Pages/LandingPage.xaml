@@ -21,7 +21,7 @@
                     VerticalAlignment="Center"
                     MaxWidth="700">
             <TextBlock Text="AI Ethics Compass"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="50"
                        FontWeight="Bold"/>
@@ -29,17 +29,57 @@
                        FontSize="20"
                        FontWeight="DemiBold"
                        TextWrapping="Wrap"
-                       TextAlignment="Center"
-                       HorizontalAlignment="Center"
+                       TextAlignment="Left"
+                       HorizontalAlignment="Left"
                        Margin="0 10 0 5"/>
 
             <TextBlock Text="Welcome to AI Ethics Compass, where responsible AI adoption is made simple. Navigate the complexities of AI implementation with confidence and align your organization with ethical principles.Gain valuable insights, identify risks, and foster transparency and fairness. Start your journey with AI Ethics Compass today. Let's shape a future where AI serves as a force for good." 
                        TextWrapping="Wrap"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
-                       TextAlignment="Center"
+                       TextAlignment="Left"
                        FontWeight="Light"
                        FontSize="20"/>
+            
+            <TextBlock Margin="0 20 0 0"
+                       FontSize="18"
+                       FontWeight="Medium"
+                       Text="To navigate effectively, follow these steps:"/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="1. Choose your industry from the drop-down menu, this selection will help tailor the assessment to your specific sector ensuring relevant insights"/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="2. Indicate the size of your business to customise the evaluation and recommendations based on your organisation's scale"/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="3. Select your role from the provided options. this will enable us understand your perspective better and provide targeted guidance"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="10">
+            <TextBlock Grid.Column="1"
+                       Text="{StaticResource CopyRight}"
+                       FontFamily="{StaticResource FontAwesome_Solid}"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Foreground="Gray"/>
+
+            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Margin="5 0 0 0"
+                       Text="Omokanyinsola Alajogun"
+                       FontSize="15"
+                       Foreground="Gray"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" 
@@ -62,7 +102,7 @@
                            FontWeight="DemiBold"
                            Foreground="Red"
                            FontSize="18"/>
-            
+
             <Button Style="{StaticResource SubmitButton}"
                     Content="Next"
                     Command="{Binding NextCommand}"
@@ -73,6 +113,6 @@
                     Height="40"/>
 
         </StackPanel>
-        
+
     </Grid>
 </local:BasePage>

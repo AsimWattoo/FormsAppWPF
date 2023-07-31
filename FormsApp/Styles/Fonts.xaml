@@ -8,6 +8,7 @@
     <FontFamily x:Key="FontAwesome_Solid">pack://application;,,,/Data/Fonts/#Font Awesome 5 Free Solid</FontFamily>
 
     <system:String x:Key="SpinnerIcon">&#xf110;</system:String>
+    <system:String x:Key="CopyRight">&#xf1f9;</system:String>
     <system:String x:Key="DotIcon">&#xf111;</system:String>
     <system:String x:Key="PlusIcon">&#xf067;</system:String>
     <system:String x:Key="WindowCloseIcon">&#xf410;</system:String>

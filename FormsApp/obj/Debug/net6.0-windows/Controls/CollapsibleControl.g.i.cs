@@ -62,7 +62,7 @@ namespace FormsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FormsApp;V1.0.0.0;component/controls/collapsiblecontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FormsApp;component/controls/collapsiblecontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\CollapsibleControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

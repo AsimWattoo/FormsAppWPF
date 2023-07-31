@@ -28,6 +28,7 @@ D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\Forms
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Styles\Colors.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\App.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CheckBox.g.cs
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CollapsibleControl.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\EditableQuestionControl.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\Navigator.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\QuestionControl.g.cs
@@ -35,6 +36,7 @@ D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\Forms
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\MainWindow.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\DefaultPage.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\EditableQuestionsPage.g.cs
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\LandingPage.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\QuestionAddEditForm.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\QuestionsPage.g.cs
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\RecommendationsPage.g.cs
@@ -44,6 +46,7 @@ D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\Forms
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\FormsApp_MarkupCompile.cache
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\FormsApp_MarkupCompile.lref
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CheckBox.baml
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CollapsibleControl.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\EditableQuestionControl.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\Navigator.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\QuestionControl.baml
@@ -51,6 +54,7 @@ D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\Forms
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\MainWindow.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\DefaultPage.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\EditableQuestionsPage.baml
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\LandingPage.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\QuestionAddEditForm.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\QuestionsPage.baml
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Pages\RecommendationsPage.baml
@@ -70,5 +74,3 @@ D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\Forms
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\FormsApp.pdb
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\FormsApp.genruntimeconfig.cache
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\ref\FormsApp.dll
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CollapsibleControl.g.cs
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\obj\Release\net6.0-windows\Controls\CollapsibleControl.baml

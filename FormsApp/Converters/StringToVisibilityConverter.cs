@@ -10,7 +10,10 @@ namespace FormsApp.Converters
         {
             if(value is string str)
             {
-                return string.IsNullOrEmpty(str) ? Visibility.Visible : Visibility.Collapsed;
+                if (parameter == null)
+                    return string.IsNullOrEmpty(str) ? Visibility.Visible : Visibility.Collapsed;
+                else
+                    return string.IsNullOrEmpty(str) ? Visibility.Collapsed : Visibility.Visible;
             }
             return Visibility.Visible;
         }

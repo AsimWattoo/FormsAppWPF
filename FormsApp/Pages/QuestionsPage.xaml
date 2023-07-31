@@ -13,7 +13,14 @@
 
     <Grid Background="White"
           Margin="0 0 0 30">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
         <ScrollViewer HorizontalScrollBarVisibility="Hidden"
+                      Grid.Column="1"
                       VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding Questions}">
@@ -36,7 +43,7 @@
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-                
+
                 <TextBlock Text="{Binding Error, FallbackValue=InvalidValue}" 
                            HorizontalAlignment="Center"
                            Margin="0 20 0 5"
@@ -44,7 +51,7 @@
                            FontWeight="DemiBold"
                            Foreground="Red"
                            FontSize="18"/>
-                
+
                 <Button Style="{StaticResource SubmitButton}"
                         Content="Submit"
                         Command="{Binding SubmitCommand}"
@@ -54,6 +61,62 @@
                         Height="40"/>
             </StackPanel>
         </ScrollViewer>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <TextBlock Margin="0 20 0 0"
+                       FontSize="18"
+                       FontWeight="Medium"
+                       Text="To navigate effectively, follow these steps:"/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="1. Read each question carefully: take your time to understand each question and its implications on ethical practices in AI implementation."/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="2. Choose the response that best aligns with your organisation's current practices."/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="3. Provide accurate responses to ensure accurate evaluation and tailored recommendations"/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="4. Your data is not stored so complete all questions to get your score and recommendation"/>
+
+            <TextBlock FontSize="18"
+                       FontWeight="Light"
+                       TextWrapping="Wrap"
+                       Text="5. The options for each question ranges from not at all to completely, not at all indicates strong disagreement or the absence of the ethical consideration in your organisation, to a small extent suggests partial alignment, moderately indicates reasonable alignment, to a large extent signifies a significant commitment to ethical practices and completely reflects strong agreement or full integration of the ethical consideration in your AI adoption"/>
+
+
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="10">
+            <TextBlock Grid.Column="1"
+                       Text="{StaticResource CopyRight}"
+                       FontFamily="{StaticResource FontAwesome_Solid}"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Foreground="Gray"/>
+
+            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Margin="5 0 0 0"
+                       Text="Omokanyinsola Alajogun"
+                       FontSize="15"
+                       Foreground="Gray"/>
+        </StackPanel>
+
     </Grid>
     
 </local:BasePage>

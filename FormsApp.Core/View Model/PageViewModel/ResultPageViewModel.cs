@@ -28,6 +28,41 @@ namespace FormsApp.Core.View_Model.PageViewModel
         /// </summary>
         public double TotalScore { get; set; } = 0;
 
+        /// <summary>
+        /// The color of the result
+        /// </summary>
+        public string Color { get; set; } = "#000000";
+
+        /// <summary>
+        /// The message based on the result
+        /// </summary>
+        public string Message { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Indicates whether any recommendation has been generated or not
+        /// </summary>
+        public bool HasAnyRecommendations => OverallRecommendation.Recommendations.Count > 0;
+
+        #endregion
+
+        #region Private Members
+
+        /// <summary>
+        /// The recommendations for each category
+        /// </summary>
+        private Dictionary<int, string> _categoryRecommendations = new Dictionary<int, string>()
+        {
+            [3] = "Strive to identify and mitigate biases to ensure equitable outcomes.",
+            [4] = "Prioritize user privacy and comply with data protection regulations.",
+            [10] = "Provide clear explanations for AI decisions to build trust and understanding.",
+            [7] = "Design AI systems to work collaboratively with human users and respect their autonomy.",
+            [5] = "Establish clear responsibilities and track AI decision-making for accountability.",
+            [8] = "Assess and address AI's impact on individuals and communities for positive outcomes.",
+            [9] = "Test and validate AI models to ensure resistance to errors and comply with safety standards.",
+            [6] = "Enable transparency and understandability of AI model decisions.",
+            [2] = "Measure and maintain accuracy in real-world scenarios for reliable AI performance."
+        };
+
         #endregion
 
         #region Commands
@@ -85,10 +120,27 @@ namespace FormsApp.Core.View_Model.PageViewModel
                 }
                 else
                 {
-                    OverallRecommendation.Recommendations.Add($"Try to improve {category.Name}");
+                    OverallRecommendation.Recommendations.Add(_categoryRecommendations[category.Id]);
                 }
             }
             OverallRecommendation.Result = Math.Round((passedCategories / (categories.Count - 1)) * 100, 2);
+
+            if(OverallRecommendation.Result >= 75 && OverallRecommendation.Result <= 100)
+            {
+                Color = "#00F700";
+                Message = "Complaint and Responsible";
+            }
+            else if(OverallRecommendation.Result >= 50 && OverallRecommendation.Result <= 74)
+            {
+                Color = "#f7d000";
+                Message = "Requires ethical review";
+            }
+            else
+            {
+                Color = "#FF0000";
+                Message = "Ethically unready";
+            }
+
         }
 
         /// <summary>
