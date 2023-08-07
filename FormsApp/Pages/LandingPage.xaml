@@ -8,7 +8,7 @@
                 xmlns:core="clr-namespace:FormsApp.Core.View_Model.PageViewModel;assembly=FormsApp.Core"
                 xmlns:conv="clr-namespace:FormsApp.Converters"
                 mc:Ignorable="d" 
-                d:DesignHeight="450" d:DesignWidth="800"
+                d:DesignHeight="900" d:DesignWidth="1100"
                 Title="LandingPage">
 
     <Grid Background="White">
@@ -20,6 +20,25 @@
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     MaxWidth="700">
+
+            <Grid>
+                <Border Width="200"
+                        x:Name="imageMask"
+                        Background="White"
+                        Height="{Binding Width, RelativeSource={RelativeSource Mode=Self}}"
+                        CornerRadius="{Binding Height, RelativeSource={RelativeSource Mode=Self}}"/>
+
+                <Image Source="/Data/Images/Logo.jpg"
+                       Width="{Binding ActualWidth, ElementName=imageMask}"
+                       Height="{Binding Width, RelativeSource={RelativeSource Mode=Self}}"
+                       >
+                    <Image.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=imageMask}"/>
+                    </Image.OpacityMask>
+                </Image>
+
+            </Grid>
+
             <TextBlock Text="AI Ethics Compass"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"

@@ -63,7 +63,7 @@ namespace FormsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FormsApp;component/pages/questionaddeditform.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AI Ethics Compass;component/pages/questionaddeditform.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\QuestionAddEditForm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

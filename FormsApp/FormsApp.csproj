@@ -6,12 +6,25 @@
     <RootNamespace>FormsApp</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Data\Images\Logo.ico</ApplicationIcon>
+    <AssemblyName>AI Ethics Compass</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Data\Fonts\fa-brands-400.ttf" />
     <None Remove="Data\Fonts\fa-regular-400.ttf" />
     <None Remove="Data\Fonts\fa-solid-900.ttf" />
+    <None Remove="Data\Images\Logo.ico" />
+    <None Remove="Data\Images\Logo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Images\Logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

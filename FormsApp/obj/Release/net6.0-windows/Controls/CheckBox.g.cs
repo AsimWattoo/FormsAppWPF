@@ -62,7 +62,7 @@ namespace FormsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FormsApp;component/controls/checkbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AI Ethics Compass;component/controls/checkbox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\CheckBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

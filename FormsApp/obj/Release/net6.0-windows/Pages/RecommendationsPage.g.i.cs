@@ -62,7 +62,7 @@ namespace FormsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FormsApp;component/pages/recommendationspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AI Ethics Compass;component/pages/recommendationspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\RecommendationsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

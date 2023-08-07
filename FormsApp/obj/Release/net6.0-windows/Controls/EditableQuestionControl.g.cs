@@ -78,7 +78,7 @@ namespace FormsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FormsApp;component/controls/editablequestioncontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AI Ethics Compass;component/controls/editablequestioncontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\EditableQuestionControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

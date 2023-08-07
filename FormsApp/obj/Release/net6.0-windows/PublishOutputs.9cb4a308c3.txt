@@ -1,8 +1,10 @@
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\FormsApp.exe
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\FormsApp.dll
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\FormsApp.deps.json
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\FormsApp.runtimeconfig.json
-D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\FormsApp.pdb
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\Data\Images\Logo.ico
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\Data\Images\Logo.jpg
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\AI Ethics Compass.exe
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\AI Ethics Compass.dll
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\AI Ethics Compass.deps.json
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\AI Ethics Compass.runtimeconfig.json
+D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\AI Ethics Compass.pdb
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\EntityFramework.SqlServer.dll
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\EntityFramework.dll
 D:\Work\Programming\Visual Studio 2022\C-Sharp\.Net Framework\WPF\FormsApp\FormsApp\bin\Release\net6.0-windows\publish\MaterialDesignColors.dll

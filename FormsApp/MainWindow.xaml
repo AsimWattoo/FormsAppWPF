@@ -60,17 +60,17 @@
 
                                         <!--Logo-->
                                         <Ellipse Width="25"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            Height="{Binding ActualWidth, RelativeSource={RelativeSource Mode=Self}}">
+                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="Center"
+                                                 Height="{Binding ActualWidth, RelativeSource={RelativeSource Mode=Self}}">
                                             <Ellipse.Fill>
-                                                <ImageBrush Stretch="Uniform"/>
+                                                <ImageBrush Stretch="Uniform" ImageSource="Data/Images/Logo.jpg"/>
                                             </Ellipse.Fill>
                                         </Ellipse>
 
                                         <!--Title-->
                                         <TextBlock Text="{Binding Title}"
-                                            Grid.ColumnSpan="3"
+                                            Grid.Column="1"
                                             Foreground="Black"
                                             FontSize="20"
                                             FontWeight="Medium"
