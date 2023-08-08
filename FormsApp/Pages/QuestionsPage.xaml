@@ -63,7 +63,8 @@
         </ScrollViewer>
 
         <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                    VerticalAlignment="Center"
+                    Margin="15 0 0 0">
 
             <TextBlock Margin="0 20 0 0"
                        FontSize="18"
@@ -73,27 +74,48 @@
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="1. Read each question carefully: take your time to understand each question and its implications on ethical practices in AI implementation."/>
 
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="2. Choose the response that best aligns with your organisation's current practices."/>
 
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="3. Provide accurate responses to ensure accurate evaluation and tailored recommendations"/>
 
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="4. Your data is not stored so complete all questions to get your score and recommendation"/>
 
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
-                       Text="5. The options for each question ranges from not at all to completely, not at all indicates strong disagreement or the absence of the ethical consideration in your organisation, to a small extent suggests partial alignment, moderately indicates reasonable alignment, to a large extent signifies a significant commitment to ethical practices and completely reflects strong agreement or full integration of the ethical consideration in your AI adoption"/>
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight">
+                <Run>5. The options for each question ranges from "not at all" to "completely", where:</Run>
+                <LineBreak/>
+                <Run>- "Not at all" indicates strong disagreement or the absence of the ethical consideration in your organisation</Run>
+                <LineBreak/>
+                <Run>- "To a small extent" suggests partial alignment</Run>
+                <LineBreak/>
+                <Run>- "Moderately" indicates reasonable alignment</Run>
+                <LineBreak/>
+                <Run>- "To a large extent" signifies a significant commitment to ethical practices</Run>
+                <LineBreak/>
+                <Run>- "Completely" reflects strong agreement or full integration of the ethical consideration in your AI adoption</Run>
+            </TextBlock>
 
 
         </StackPanel>

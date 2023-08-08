@@ -53,14 +53,14 @@ namespace FormsApp.Core.View_Model.PageViewModel
         private Dictionary<int, string> _categoryRecommendations = new Dictionary<int, string>()
         {
             [3] = "Strive to identify and mitigate biases to ensure equitable outcomes.",
-            [4] = "Prioritize user privacy and comply with data protection regulations.",
+            [4] = "Prioritise user privacy and comply with data protection regulations.",
             [10] = "Provide clear explanations for AI decisions to build trust and understanding.",
             [7] = "Design AI systems to work collaboratively with human users and respect their autonomy.",
             [5] = "Establish clear responsibilities and track AI decision-making for accountability.",
             [8] = "Assess and address AI's impact on individuals and communities for positive outcomes.",
             [9] = "Test and validate AI models to ensure resistance to errors and comply with safety standards.",
             [6] = "Enable transparency and understandability of AI model decisions.",
-            [2] = "Measure and maintain accuracy in real-world scenarios for reliable AI performance."
+            [2] = "Implement robust mechanisms to assess and uphold accuracy in real-world scenarios, ensuring consistent and reliable AI performance."
         };
 
         #endregion
@@ -123,12 +123,14 @@ namespace FormsApp.Core.View_Model.PageViewModel
                     OverallRecommendation.Recommendations.Add(_categoryRecommendations[category.Id]);
                 }
             }
+            OverallRecommendation.Recommendations.Add("Ensure adherence to AI and data governance principles to uphold ethical standards and regulatory compliance.");
+
             OverallRecommendation.Result = Math.Round((passedCategories / (categories.Count - 1)) * 100, 2);
 
             if(OverallRecommendation.Result >= 75 && OverallRecommendation.Result <= 100)
             {
                 Color = "#00F700";
-                Message = "Complaint and Responsible";
+                Message = "Compliant and Responsible";
             }
             else if(OverallRecommendation.Result >= 50 && OverallRecommendation.Result <= 74)
             {

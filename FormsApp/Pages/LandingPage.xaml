@@ -21,7 +21,7 @@
                     VerticalAlignment="Center"
                     MaxWidth="700">
 
-            <Grid>
+            <Grid Margin="0 0 0 30">
                 <Border Width="200"
                         x:Name="imageMask"
                         Background="White"
@@ -57,6 +57,8 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        TextAlignment="Left"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        FontWeight="Light"
                        FontSize="20"/>
             
@@ -68,16 +70,22 @@
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="1. Choose your industry from the drop-down menu, this selection will help tailor the assessment to your specific sector ensuring relevant insights"/>
 
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="2. Indicate the size of your business to customise the evaluation and recommendations based on your organisation's scale"/>
 
             <TextBlock FontSize="18"
                        FontWeight="Light"
                        TextWrapping="Wrap"
+                       LineHeight="30"
+                       LineStackingStrategy="BlockLineHeight"
                        Text="3. Select your role from the provided options. this will enable us understand your perspective better and provide targeted guidance"/>
 
         </StackPanel>

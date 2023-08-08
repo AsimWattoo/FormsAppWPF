@@ -85,6 +85,8 @@
                                                        Foreground="Gray"/>
                                             <TextBlock Text="{Binding}"
                                                        FontSize="18"
+                                                       LineHeight="30"
+                                                       LineStackingStrategy="BlockLineHeight"
                                                        HorizontalAlignment="Left"
                                                        VerticalAlignment="Center"
                                                        FontWeight="Medium"
